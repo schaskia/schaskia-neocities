@@ -1,0 +1,112 @@
+@import url('./global.css');
+
+body {
+    background-color: var(--color-background01);
+}
+
+h1 {
+    margin: 1rem;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 70%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--color-wrapper01);
+    border-radius: 2rem;
+}
+
+.page-box {
+    margin: 0.5rem;
+    border-radius: 2rem;
+    background-color: var(--color-box);
+    box-shadow: 0.25rem 0.25rem 0.5rem #26384787;
+}
+
+.header {
+    border-radius: 1.65rem 1.65rem 0 0;
+    vertical-align: top;
+}
+.header.links {
+    background-color: var(--color-accent02);
+}
+
+.header.presentation {
+    background-color: var(--color-accent01);
+}
+
+.header.status {
+    background-color: var(--color-accent03);
+}
+.header > h2 {
+    color: var(--color-box);
+    text-align: center;
+    padding: 0.5rem 0;
+    margin-top: 0;
+}
+
+#header {
+    grid-column: 1 / span 4;
+    text-align: center;
+}
+
+#links {
+    grid-row: 2 / span 2;
+}
+#links ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+#links li {
+    text-decoration: none;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    margin: 1rem 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.25rem #26384787;
+}
+#links a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 1rem 0.5rem;
+}
+#presentation {
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 3;
+}
+.accueil-image {
+    float: right;
+    width: 50%;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.25rem #26384787;
+    margin: 1rem;
+}
+
+#status {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+.status > p {
+    margin-top: 0;
+}
+.date > * {
+    display: block;
+    margin-bottom: 0;
+}
+
+#now-playing {
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 2;
+}
+.header.now-playing {
+    background-color: var(--color-accent04);
+}
+.album-cover {
+    width: 85%;
+    border-radius: 2rem;
+    box-shadow: 0.1rem 0.1rem 0.25rem #26384787;
+    margin: 1rem auto;
+}
