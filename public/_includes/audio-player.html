@@ -1,0 +1,24 @@
+<div class="audio-player {% for tag in tags %}tag-{{ tag }}{% endfor %}">
+            <button class="circle-btn" aria-label="Play">
+                <!-- SVG container for progress ring + icons -->
+                <svg class="circle-svg" viewBox="0 0 100 100">
+                <!-- background circle -->
+                <circle class="circle-bg" cx="50" cy="50" r="45" />
+                <!-- progress circle -->
+                <circle class="circle-progress" cx="50" cy="50" r="45" />
+
+                <!-- play icon -->
+                <g class="icon icon-play">
+                    <path d="M40 30 L70 50 L40 70 Z" fill="currentColor"/>
+                </g>
+
+                <!-- pause icon -->
+                <g class="icon icon-pause">
+                    <rect x="38" y="30" width="10" height="40" fill="currentColor"/>
+                    <rect x="55" y="30" width="10" height="40" fill="currentColor"/>
+                </g>
+                </svg>
+            </button>
+
+            <audio src="{{ audioSrc }}"></audio>
+        </div>

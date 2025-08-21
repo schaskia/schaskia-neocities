@@ -1,0 +1,28 @@
+---
+layout: layout/base.html
+title: In my album review era
+---
+{% block styles %}
+    <link rel="stylesheet" href="/css/album-gallery.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    <div class="header-links">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/album-gallery">Disquaire</a></li>
+        </ul>
+    </div>
+    {% for albums in collections.albums | reverse %}
+        <div class="post-wrapper">
+            <a href="{{ albums.url }}">
+                <img src="{{ albums.data.cover}}" class="album-cover">
+                <div class="album-info">
+                    <h2 class="album-title">{{ albums.data.title }}</h2>
+                    <p class="album-artist">{{ albums.data.artist }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,57 @@
+---
+layout: layout/base.html
+title: Euh génération web???
+---
+{% block styles %}
+    <link rel="stylesheet" href="/css/accueil.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    <div id="header" class="page-box">
+        <h1>Saskia Schnéegans</h1>
+        <h6>Qui?</h6>
+    </div>
+    <div id="links" class="page-box">
+        <div class="header links">
+            <h2>Table des matières</h2>
+        </div>
+        <ul>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/album-gallery">Disquaire</a></li>
+            <li><a href="/images">Gallerie photo</a></li>
+            <li><a href="/contact">Où me contacter</a></li>
+        </ul>
+            </div>
+    <div id="presentation" class="page-box">
+        <div class="header presentation">
+            <h2>Présentation de l'enfoirée dans la photo</h2>
+        </div>
+        <img src="/assets/images/accueil-image.png" alt="Ma sale gueule qui regarde pas dans la caméra" class="accueil-image">
+        <p>Salut! Moi c'est Saskia, je suis une "artiste" multimédia; graphisme, compositing, musique, poésie, vidéographie, broderie, etc. Je réside dans la Rive-Sud de Montréal, j'ai 19 et je suis fièrement transgenre (parce que je l'ai été avec honte pendant quelques années et c'est pas tant plaisant).</p>
+        <p>Ce site web, c'est encore une autre manière pour moi de m'exprimer à travers un médium que je connais à peine. C'est mon deuxième essai à avoir un site web à mon goût, cette fois-ci avec le moins d'intervention d'IA possible (Copilot compte pas ok? Je sais déjà ce que je veux faire et comment le faire, Copilot fait juste la partie chiante de l'écrire).</p>
+        <p>On est encore dans la phase "en construction" du site, faque bookmark-moi pis reviens dans quelques mois pour voir ce qui a changé. Check la liste pour voir si tout a été atteint, et aussi pour voir tout ce que tu peux/va pouvoir visiter.</p>
+    </div>
+    <div id="status" class="page-box">
+        <div class="header status">
+            <h2>Statut</h2>
+        </div>
+        <div class="status">
+            <div class="date">
+                <h4>Vendredi le 15 août 2025</h4><h6>à 20:38</h6>
+            </div>
+            <p>C'est excitant de recommencer à travailler sur mon site web not gonna lie.</p>
+        </div>
+    </div>
+    <div id="now-playing" class="page-box">
+        <div class="header now-playing">
+            <h2>Toune du moment</h2>
+        </div>
+        <div class="now-playing">
+            <img src="/assets/images/albums/decomposer.jpg" alt="Decomposer - The Matches" class="album-cover">
+            <h3>The Barbers Unhappiness</h3>
+            <h4>The Matches</h4>
+            {% set audioSrc = "/assets/audio/the-barbers-unhappiness.mp3" %}
+            {% include "audio-player.html" %}
+        </div>
+    </div>
+</div>
