@@ -3,15 +3,15 @@ layout: layout/base.html
 title: En mode (salvail haha) journal
 ---
 {% block styles %}
-    <link rel="stylesheet" href="/public/css/journal.css">
+    <link rel="stylesheet" href="/css/journal.css">
 {% endblock %}
 
 <div class="page-wrapper">
     <div class="header-links">
         <ul>
-            <li><a href="/public/">Accueil</a></li>
-            <li><a href="/public/journal">Journal</a></li>
-            <li><a href="/public/album-gallery">Disquaire</a></li>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/album-gallery">Disquaire</a></li>
         </ul>
     </div>
     {% for journal in collections.journal | reverse %}

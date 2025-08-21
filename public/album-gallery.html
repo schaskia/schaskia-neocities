@@ -3,15 +3,15 @@ layout: layout/base.html
 title: In my album review era
 ---
 {% block styles %}
-    <link rel="stylesheet" href="/public/css/album-gallery.css">
+    <link rel="stylesheet" href="/css/album-gallery.css">
 {% endblock %}
 
 <div class="page-wrapper">
     <div class="header-links">
         <ul>
             <li><a href="/">Accueil</a></li>
-            <li><a href="/public/journal">Journal</a></li>
-            <li><a href="/public/album-gallery">Disquaire</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/album-gallery">Disquaire</a></li>
         </ul>
     </div>
     {% for albums in collections.albums | reverse %}
