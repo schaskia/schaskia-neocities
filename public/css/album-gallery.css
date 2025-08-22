@@ -50,6 +50,8 @@ body {
   display: inline;
   text-decoration: none;
   margin: 1rem 0.5rem;
+  width: 100%;
+  height: auto;
 }
 
 .album-cover {
@@ -58,7 +60,7 @@ body {
   border-radius: 1.5rem;
   margin: 0;
   padding: 0;
- transition: filter .2s, transform .2s;
+  transition: filter .2s, transform .2s;
 }
 .post-wrapper {
   position: relative;
