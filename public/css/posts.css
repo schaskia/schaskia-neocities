@@ -2,6 +2,9 @@
 
 body {
     background-color: var(--color-background01);
+    background-image: url(/assets/images/doodle-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .page-wrapper {

@@ -2,6 +2,9 @@
 
 body {
     background-color: var(--color-background01);
+    background-image: url(/assets/images/doodle-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -12,7 +15,7 @@ h1 {
     display: grid;
     grid-template-columns: auto auto auto auto;
     width: 70%;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 1rem;
     background-color: var(--color-wrapper01);
     border-radius: 2rem;
@@ -28,23 +31,29 @@ h1 {
 .header {
     border-radius: 1.65rem 1.65rem 0 0;
     vertical-align: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.header.links {
-    background-color: var(--color-accent02);
-}
-
 .header.presentation {
     background-color: var(--color-accent01);
 }
 
-.header.status {
+.header.links, .header.buttons {
+    background-color: var(--color-accent02);
+}
+
+.header.status, .header.latest-post {
     background-color: var(--color-accent03);
+}
+
+.header.now-playing {
+    background-color: var(--color-accent04);
 }
 .header > h2 {
     color: var(--color-box);
     text-align: center;
     padding: 0.5rem 0;
-    margin-top: 0;
 }
 
 #header {
@@ -89,8 +98,18 @@ h1 {
     grid-column: 4 / span 1;
     grid-row: 2 / span 1;
 }
-.status > p {
-    margin-top: 0;
+.status-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.date {
+    flex: 0 0 100%;
+}
+.status-text > p, .latest-post > a > p {
+    margin: 0.5rem 1.5rem;
 }
 .date > * {
     display: block;
@@ -101,12 +120,48 @@ h1 {
     grid-column: 4 / span 1;
     grid-row: 3 / span 2;
 }
-.header.now-playing {
-    background-color: var(--color-accent04);
-}
 .album-cover {
     width: 85%;
     border-radius: 2rem;
     box-shadow: 0.1rem 0.1rem 0.25rem #26384787;
     margin: 1rem auto;
+}
+.audio-player {
+    padding-bottom: 1rem;
+}
+
+#latest-post {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+}
+.latest-post > a {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    box-shadow: 0.1rem 0.1rem 0.25rem #26384787;
+}
+.latest-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons {
+    grid-column: 1 / span 4;
+    grid-row: 5 / span 1;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.button-image {
+    margin: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+.button-image:hover {
+    transform: scale (1.25);
 }

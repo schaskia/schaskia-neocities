@@ -5,6 +5,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/css');
     eleventyConfig.addPassthroughCopy('src/js');
 
+    eleventyConfig.addFilter("limit", function (arr, limit) {
+    return arr.slice(0, limit);
+    });
+
     return {
         dir: {
             input: 'src',
@@ -17,4 +21,5 @@ module.exports = function (eleventyConfig) {
         htmlTemplateEngine: "njk",
         dataTemplateEngine: "njk",
   };
+
 };
