@@ -11,11 +11,16 @@
 
   </head>
   <script src="/js/audio-player.js"></script>
+  <script src="/js/collapsible.js"></script>
   <body>
     <div class="page-wrapper">
       <div class="post-wrapper">
+          <img src="{{ cover }}" alt="{{ title }} - {{ artist }}" class="album-cover">
           <h1 class="post-title">{{ title }}</h1>
-          <p><em class="post-date">{{ posted }}</em></p>
+          <h3 class="post-artist">{{ artist }}</h3>
+          <p><em class="post-date">{{ year }}</em></p>
+          <h6 class="post-genre">{{ genre }}</h6>
+
           {{content | safe}} 
           <a href="/album-gallery" class="back-button">← Retour au Disquaire</a>
           <div class="footer-text">
