@@ -185,9 +185,7 @@ hr {
     margin: 1rem 1.5rem;
     opacity: 0.3;
 }
-.webrings {
-    margin: 1rem auto;
-}
+
 .webrings a
 {
     display: initial;
@@ -197,4 +195,8 @@ hr {
 {
     display: initial;
     margin: initial;
+}
+.webrings {
+    margin: 1rem auto;
+    display: block;
 }
