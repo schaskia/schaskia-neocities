@@ -172,6 +172,7 @@ a {
 .buttons-text > a {
     margin: 1rem;
     margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 .button-image:hover {
     transform: scale (1.25);
