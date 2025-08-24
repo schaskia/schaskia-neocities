@@ -187,3 +187,14 @@ hr {
     margin: 1rem 1.5rem;
     opacity: 0.3;
 }
+
+.webrings a
+{
+    display: initial;
+    margin: initial;
+}
+.webrings img
+{
+    display: initial;
+    margin: initial;
+}
