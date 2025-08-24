@@ -39,19 +39,17 @@ a {
     justify-content: center;
     align-items: center;
 }
-.header.presentation {
+#header-presentation {
     background-color: var(--color-accent01);
 }
 
-.header.links, .header.buttons {
+#header-links, #header-buttons {
     background-color: var(--color-accent02);
 }
-
-.header.status, .header.latest-post {
+#header-status, #header-latest-post {
     background-color: var(--color-accent03);
 }
-
-.header.now-playing, .header.webrings {
+#header-now-playing, #header-webrings {
     background-color: var(--color-accent04);
 }
 .header > h2 {
@@ -187,7 +185,9 @@ hr {
     margin: 1rem 1.5rem;
     opacity: 0.3;
 }
-
+.webrings {
+    margin: 1rem auto;
+}
 .webrings a
 {
     display: initial;
