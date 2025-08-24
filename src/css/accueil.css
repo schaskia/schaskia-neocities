@@ -11,6 +11,10 @@ h1 {
     margin: 1rem;
 }
 
+a {
+    display: inline-block;
+}
+
 .page-wrapper {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -151,17 +155,34 @@ h1 {
     grid-column: 1 / span 4;
     grid-row: 5 / span 1;
 }
-.buttons {
+.buttons-text {
+    display: block;
+    text-align: center;
+}
+.buttons-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow-y: auto;
 }
 .button-image {
     margin: 0.5rem;
     transition: transform 0.2s ease-in-out;
 }
+.buttons-text > a {
+    margin: 1rem;
+    margin-top: 0;
+}
 .button-image:hover {
     transform: scale (1.25);
+}
+.button-personal {
+    margin: 0.5rem auto;
+}
+hr {
+    border: 0;
+    height: 1.5px;
+    background: var(--color-wrapper01);
+    margin: 1rem 1.5rem;
+    opacity: 0.3;
 }
