@@ -176,7 +176,7 @@ a {
 .button-image:hover {
     transform: scale (1.25);
 }
-.button-personal {
+.button-personal, table {
     margin: 0.5rem auto;
 }
 hr {
