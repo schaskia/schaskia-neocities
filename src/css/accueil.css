@@ -199,4 +199,5 @@ hr {
 .webrings {
     margin: 1rem auto;
     display: block;
+    justify-content: center;
 }
