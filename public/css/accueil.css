@@ -51,7 +51,7 @@ a {
     background-color: var(--color-accent03);
 }
 
-.header.now-playing {
+.header.now-playing, .header.webrings {
     background-color: var(--color-accent04);
 }
 .header > h2 {
