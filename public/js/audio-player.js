@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".audio-player").forEach(player => {
     const btn = player.querySelector(".circle-btn");
     const audio = player.querySelector("audio");
-    audio.volume = 0.3;
+    audio.volume = 0.5;
     const progressRing = player.querySelector(".circle-progress");
 
     // read radius from CSS variable
