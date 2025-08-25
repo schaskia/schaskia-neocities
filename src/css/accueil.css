@@ -197,7 +197,11 @@ hr {
     margin: initial;
 }
 .webrings {
-    margin: 1rem auto;
-    display: block;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+#francophonering {
+    display: block;
+    margin: 1rem auto;
 }
