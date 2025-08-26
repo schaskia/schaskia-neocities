@@ -1,0 +1,28 @@
+---
+layout: layout/base.html
+title: Musée des corrects-arts
+---
+{% block styles %}
+<link rel="stylesheet" href="/css/photo-gallery.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    <div class="header-links">
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/album-gallery">Disquaire</a></li>
+            <li><a href="/photo-gallery">Album photo</a></li>
+        </ul>
+    </div>
+    {% for photo in photos | shuffle %}
+        <div class="photo-wrapper">
+            <img src="{{ photo.src }}" class="photo-source" alt="{{ photo.title }}" loading="lazy">
+            <div class="photo-info {{ photo.type }}">
+                <h2 class="photo-title">{{ photo.title }}</h2>
+                <p class="photo-credits">{{ photo.credits }}</p>
+                <h6 class="photo-description">{{ photo.desc }}</h6>
+            </div>
+        </div>
+    {% endfor %}
+</div>

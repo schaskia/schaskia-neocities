@@ -8,6 +8,19 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("limit", function (arr, limit) {
     return arr.slice(0, limit);
     });
+      // Shuffle / randomize array 
+    eleventyConfig.addFilter("shuffle", function(array) {
+        // Create a copy of the array to avoid modifying the original
+        let shuffledArray = array.slice();
+
+        // Fisher-Yates shuffle algorithm
+        for (let i = shuffledArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        }
+
+        return shuffledArray;
+    });
 
     return {
         dir: {

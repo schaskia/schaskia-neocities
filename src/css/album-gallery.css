@@ -61,6 +61,7 @@ body {
   margin: 0;
   padding: 0;
   transition: filter .2s, transform .2s;
+  object-fit: cover;
 }
 .post-wrapper {
   position: relative;
