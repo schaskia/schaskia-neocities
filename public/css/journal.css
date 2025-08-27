@@ -9,7 +9,7 @@ body {
 
 .page-wrapper {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
     width: 70%;
     margin: 2rem auto;
     padding: 1rem;
@@ -18,7 +18,8 @@ body {
 }
 
 .post-wrapper {
-    margin: 0.5rem;
+    margin: 0.5rem 0.5rem;
+    width: 32vw;
     border-radius: 2rem;
     background-color: var(--color-box);
     box-shadow: 0.25rem 0.25rem 0.5rem #26384787;
