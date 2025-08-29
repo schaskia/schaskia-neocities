@@ -163,6 +163,14 @@ a {
     grid-row: 9 / span 2;
     overflow-y: auto;
 }
+#buttons::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+#buttons {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 .buttons-text {
     display: block;
     text-align: center;
