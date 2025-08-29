@@ -7,14 +7,7 @@ title: Les pires scriptures ever
 {% endblock %}
 
 <div class="page-wrapper">
-    <div class="header-links">
-        <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/journal">Journal</a></li>
-            <li><a href="/album-gallery">Disquaire</a></li>
-            <li><a href="/photo-gallery">Album photo</a></li>
-        </ul>
-    </div>
+    {% include "header-links.html" %}
     {% for journal in collections.journal | reverse %}
         <div class="post-wrapper">
             <a href="{{ journal.url }}">

@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://discord.com/users/581645939756892170",
+    "type": "Discord",
+    "icon": "/assets/images/buttons/contact/discord.svg",
+    "user": "@schaskia"
+  },
+  {
+    "url": "mailto:saskia.schneg@gmail.com",
+    "type": "Gmail",
+    "icon": "/assets/images/buttons/contact/gmail.svg",
+    "user": "Saskia Schnéegans"
+  },
+  {
+    "url": "https://www.instagram.com/schneg2.0/?next=/",
+    "type": "Instagram",
+    "icon": "/assets/images/buttons/contact/instagram.svg",
+    "user": "@schneg2.0"
+  },
+  {
+    "url": "https://www.last.fm/user/schaskia",
+    "type": "Last.fm",
+    "icon": "/assets/images/buttons/contact/lastfm.svg",
+    "user": "schaskia"
+  },
+  {
+    "url": "https://www.linkedin.com/in/saskia-schn%C3%A9egans-10772834b/",
+    "type": "LinkedIn",
+    "icon": "/assets/images/buttons/contact/linkedin.svg",
+    "user": "Saskia Schnéegans"
+  },
+  {
+    "url": "https://www.reddit.com/user/DoritoSaskia/",
+    "type": "Reddit",
+    "icon": "/assets/images/buttons/contact/reddit.svg",
+    "user": "/u/DoritoSaskia"
+  }
+]

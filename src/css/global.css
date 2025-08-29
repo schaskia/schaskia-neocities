@@ -4,12 +4,16 @@
 /* Loading color variables and fonts */
 
 :root {
-    --color-background01: #2B3F41;
-    --color-wrapper01: #57797D;
-    --color-background02: #442125;
-    --color-wrapper02: #683A34;
-    --color-background03: #452a57;
-    --color-wrapper03: #7c5397;
+    --color-background01: #22162d;
+    --color-wrapper01: #422c55;
+    --color-background02: #12304c;
+    --color-wrapper02: #1a4c7a;
+    --color-background03: #631321;
+    --color-wrapper03: #821126;
+    --color-background04: #0a322f;
+    --color-wrapper04: #0A544F;
+    --color-background05: #bb7218;
+    --color-wrapper05: #D4821E;
     --color-box: #f4f0e5;
     --color-box-hover: #e0dcd2;
     --color-text: #201107;
@@ -18,6 +22,10 @@
     --color-accent02: #1a4c7a;
     --color-accent03: #B60E2D;
     --color-accent04: #D4821E;
+    --color-accent01-muted: #0a3e3a;
+    --color-accent02-muted: #153756;
+    --color-accent03-muted: #8d1228;
+    --color-accent04-muted: #bb7218;
 }
 
 @font-face {

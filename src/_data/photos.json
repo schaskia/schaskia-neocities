@@ -46,7 +46,7 @@
     "type": "poster",
     "title": "Faim",
     "credits": "Crédits: moi!",
-    "desc": "Des fois j'ai juste envie un petit quelque chose tsé..."
+    "desc": "Des fois j'ai juste envie de manger un petit quelque chose tsé..."
   },
   {
     "src": "/assets/images/photos/jeans.png",
@@ -156,7 +156,7 @@
   {
     "src": "/assets/images/photos/tuque.png",
     "type": "poster",
-    "title": "Sludge",
+    "title": "Tuque",
     "credits": "Crédits: moi!",
     "desc": "Un des posters dans le gros poster 36 en 1."
   },

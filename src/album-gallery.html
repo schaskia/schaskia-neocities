@@ -7,14 +7,7 @@ title: En mode bambin braise
 {% endblock %}
 
 <div class="page-wrapper">
-    <div class="header-links">
-        <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/journal">Journal</a></li>
-            <li><a href="/album-gallery">Disquaire</a></li>
-            <li><a href="/photo-gallery">Album photo</a></li>
-        </ul>
-    </div>
+    {% include "header-links.html" %}
     {% for albums in collections.albums | reverse %}
         <div class="post-wrapper">
             <a href="{{ albums.url }}">

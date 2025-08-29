@@ -1,7 +1,7 @@
 @import url('./global.css');
 
 body {
-  background-color: var(--color-background03);
+  background-color: var(--color-background04);
   background-image: url(/assets/images/doodle-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +13,7 @@ body {
   width: 70%;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: var(--color-wrapper03);
+  background-color: var(--color-wrapper04);
   border-radius: 2rem;
 }
 
@@ -24,7 +24,7 @@ body {
   margin-bottom: 1.5rem;
   border-radius: 2rem;
   background-color: var(--color-box);
-  box-shadow: 0.25rem 0.25rem 0.5rem #44212587;
+  box-shadow: 0.25rem 0.25rem 0.5rem #0a322f87;
   column-span: all;
   break-inside: avoid;
 }
@@ -39,7 +39,7 @@ body {
   border-radius: 1rem;
   padding: 0.5rem;
   margin: 1rem 0.5rem;
-  box-shadow: 0.1rem 0.1rem 0.25rem #44212587;
+  box-shadow: 0.1rem 0.1rem 0.25rem #0a0f20a2;
 }
 .header-links a {
   display: inline;
@@ -55,7 +55,7 @@ body {
   margin: 0 0 1.2rem 0;
   position: relative;
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 0.25rem #44212587;
+  box-shadow: 0.2rem 0.2rem 0.25rem #0a0f20a2;
   overflow: hidden;
   background: var(--color-box);
   transition: transform .5s;

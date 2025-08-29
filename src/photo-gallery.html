@@ -7,14 +7,7 @@ title: Musée des corrects-arts
 {% endblock %}
 
 <div class="page-wrapper">
-    <div class="header-links">
-        <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/journal">Journal</a></li>
-            <li><a href="/album-gallery">Disquaire</a></li>
-            <li><a href="/photo-gallery">Album photo</a></li>
-        </ul>
-    </div>
+    {% include "header-links.html" %}
     {% for photo in photos | shuffle %}
         <div class="photo-wrapper">
             <img src="{{ photo.src }}" class="photo-source" alt="{{ photo.title }}" loading="lazy">
