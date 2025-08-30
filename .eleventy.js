@@ -7,7 +7,6 @@ function xmlEscape(str) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 }
 
 module.exports = function (eleventyConfig) {
@@ -15,7 +14,7 @@ module.exports = function (eleventyConfig) {
 
     // Register custom filters for Nunjucks
     eleventyConfig.addNunjucksFilter("xmlEscape", xmlEscape);
-        
+
     // Passthrough copy for static assets
     eleventyConfig.addPassthroughCopy('src/assets');
     eleventyConfig.addPassthroughCopy('src/css');
