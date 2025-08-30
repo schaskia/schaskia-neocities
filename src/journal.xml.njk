@@ -16,7 +16,7 @@ eleventyExcludeFromCollections: true
         <link>{{ metadata.url }}{{ post.url }}</link>
         <guid>{{ metadata.url }}{{ post.url }}</guid>
         <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-        <description>{{ post.templateContent | xmlEscape }}</description>
+        <description>{{ post.templateContent | striptags | xmlEscape }}</description>
       </item>
     {% endfor %}
   </channel>
