@@ -1,19 +1,4 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-
-function xmlEscape(str) {
-  if (!str) return "";
-  return str
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-}
-
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(pluginRss);
-
-    // Register custom filters for Nunjucks
-    eleventyConfig.addNunjucksFilter("xmlEscape", xmlEscape);
 
     // Passthrough copy for static assets
     eleventyConfig.addPassthroughCopy('src/assets');
