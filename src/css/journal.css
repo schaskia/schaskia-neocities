@@ -59,3 +59,13 @@ body {
   text-decoration: none;
   margin: 1rem 0.5rem;
 }
+
+.rss {
+  grid-column: span 2;
+  text-align: center;
+  margin: 0 auto;
+}
+.rss .button-image {
+  width: 8rem;
+  height: auto;
+}

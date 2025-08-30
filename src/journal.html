@@ -2,12 +2,18 @@
 layout: layout/base.html
 title: Les pires scriptures ever
 ---
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/journal/feed.xml">
 {% block styles %}
     <link rel="stylesheet" href="/css/journal.css">
 {% endblock %}
 
 <div class="page-wrapper">
     {% include "header-links.html" %}
+    <div class="rss">
+        <a href="/journal/feed.xml">
+            <img src="/assets/images/buttons/contact/rss.gif" class="button-image" />
+        </a>
+    </div>
     {% for journal in collections.journal | reverse %}
         <div class="post-wrapper">
             <a href="{{ journal.url }}">
