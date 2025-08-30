@@ -10,11 +10,11 @@ eleventyExcludeFromCollections: true
     <language>fr</language>
     {% for post in posts %}
       <item>
-        <title>{{ post.data.title | xmlEscape }}</title>
+        <title>{{ post.data.title | striptags | xmlEscape }}</title>
         <link>{{ metadata.url }}{{ post.url }}</link>
         <guid>{{ metadata.url }}{{ post.url }}</guid>
         <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
-        <description>{{ post.templateContent | striptags | xmlEscape }}</description>
+        <description><![CDATA[{{ post.templateContent }}]]></description>
       </item>
     {% endfor %}
   </channel>
