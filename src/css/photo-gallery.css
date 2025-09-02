@@ -41,12 +41,13 @@ body {
   margin: 1rem 0.5rem;
   box-shadow: 0.1rem 0.1rem 0.25rem #0a0f20a2;
 }
-.header-links a {
+.header-button {
   display: inline;
   text-decoration: none;
   margin: 1rem 0.5rem;
   width: 100%;
   height: auto;
+  color: var(--color-text);
 }
 
 .photo-wrapper {
