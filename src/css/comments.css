@@ -73,7 +73,7 @@ a, img {
     margin: 0 1.5rem;
 }
 
-.hcb-door-in, .home-desc, a:not([class]), h3 {
+.hcb-door-in, .home-desc, h3 {
     display: none;
 }
 
