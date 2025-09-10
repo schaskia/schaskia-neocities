@@ -1,0 +1,134 @@
+---
+layout: layout/base.html
+title: Euh génération web???
+lang: "fr"
+langAltUrl: "/en/"
+---
+{% block styles %}
+    <link rel="stylesheet" href="/css/accueil.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    <div id="header" class="page-box">
+        <h1>le S dans Saskia c'est pour Site Web</h1>
+        <h6>Ouais c'est bon ça, ça montre crissement bien le niveau de qualité du reste du site.</h6>
+    </div>
+    <div id="links" class="page-box">
+        <div id="header-links" class="header">
+            <h2>Table des matières</h2>
+        </div>
+        <ul>
+            <li><a href="/fr/journal">Journal</a></li>
+            <li><a href="/fr/album-gallery">Disquaire</a></li>
+            <li><a href="/fr/photo-gallery">Album photo</a></li>
+            <li><a href="/fr/contact">Mes liens</a></li>
+            <li><a href="/fr/comments">Commentaires</a></li>
+        </ul>
+    </div>
+    <div id="presentation" class="page-box">
+        <div id="header-presentation" class="header">
+            <h2>Présentation de l'enfoirée dans la photo</h2>
+        </div>
+        <img src="/assets/images/accueil-image.png" alt="Ma sale gueule qui regarde pas dans la caméra" class="accueil-image">
+        <p>Salut! Moi c'est Saskia, je suis une "artiste" multimédia; graphisme, compositing, musique, poésie, vidéographie, broderie, etc. Je réside dans la Rive-Sud de Montréal, j'ai 19 ans et je suis fièrement transgenre (parce que je l'ai été avec honte pendant quelques années et c'est pas tant plaisant).</p>
+        <p>Ce site web, c'est encore une autre manière pour moi de m'exprimer à travers un médium que je connais à peine. Somehow, même si c'était pas mon but, j'ai réussi à rendre le look de mon site web ultra corpo et boring, mais c'est chill parce que tout l'humour se trouve dans les mots que j'écris. D'ailleurs, ça me rappelle une bonne blague. Que dit un écureuil lorsqu'il tombe dans la piscine? Au secours, je me noix! (Senseï je t'aime de tout mon coeur)</p>
+        <p>On est encore dans la phase "en construction" du site, faque bookmark-moi pis reviens dans quelques mois pour voir ce qui a changé. Check la liste pour voir si tout a été atteint, et aussi pour voir tout ce que tu peux/va pouvoir visiter.</p>
+    </div>
+    <div id="status" class="page-box">
+        <div id="header-status" class="header">
+            <h2>Statut</h2>
+        </div>
+        <div class="status-text">
+            <div class="date">
+                <h4>Mercredi le 10 septembre</h4><h6>à 17:40</h6>
+            </div>
+            <p>Il n'y a pas de nouvelles mondiales à Ba Sing Se.</p>
+        </div>
+    </div>
+    <div id="now-playing" class="page-box">
+        <div id="header-now-playing" class="header">
+            <h2>Toune du moment</h2>
+        </div>
+        <div class="now-playing">
+            <img src="/assets/images/albums/emotion.jpg" alt="E·mo·tion - Carly Rae Jepsen" class="album-cover">
+            <h3>LA Hallucinations</h3>
+            <h4>Carly Rae Jepsen</h4>
+            {% set audioSrc = "/assets/audio/la-hallucinations.mp3" %}
+            {% include "audio-player.html" %}
+            <p>La vie va tellement mieux quand mon cerveau me laisse apprécier des choses populaires.</p>
+        </div>
+    </div>
+    <div id="latest-post" class="page-box">
+        <div id="header-latest-post" class="header">
+            <h2>Dernier post</h2>
+        </div>
+        <div class="latest-post">
+            {% for journal in collections.journal | reverse | limit(1) %}
+            <a href="{{ journal.url }}">
+                <h4 class="post-title">{{ journal.data.title }}</h4>
+                <h6 class="post-meta">{{ journal.data.posted }}</h6>
+                <p class="post-tagline">{{ journal.data.tagline }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="buttons" class="page-box">
+        <div id="header-buttons" class="header">
+            <h2>Des boutons!</h2>
+        </div>
+        <div class="buttons-text">
+            <div class="buttons-wrapper">
+                <img src="/assets/images/buttons/cssdif.gif" class="button-image" />
+                <img src="/assets/images/buttons/designedbymac.gif" class="button-image" />
+                <img src="/assets/images/buttons/fckfb.gif" class="button-image" />
+                <img src="/assets/images/buttons/fckgoogle.gif" class="button-image" />
+                <img src="/assets/images/buttons/graphicdesign.gif" class="button-image" />
+                <img src="/assets/images/buttons/internetprivacy.gif" class="button-image" />
+                <img src="/assets/images/buttons/misspictochat.gif" class="button-image" />
+                <img src="/assets/images/buttons/neocities.gif" class="button-image" />
+                <img src="/assets/images/buttons/publicdomain.gif" class="button-image" />
+                <img src="/assets/images/buttons/queerpride.gif" class="button-image" />
+                <img src="/assets/images/buttons/ralseismokingadart.gif" class="button-image" />
+                <img src="/assets/images/buttons/reddit.gif" class="button-image" />
+                <img src="/assets/images/buttons/seedyourtorrents.gif" class="button-image" />
+                <img src="/assets/images/buttons/smile.gif" class="button-image" />
+                <img src="/assets/images/buttons/vscode.gif" class="button-image" />
+            </div>
+            <hr>
+            <h4>Bouton vers mon site web!</h4>
+            <h6>Si tu veux le mettre sur ton site web, dis-le moi que je te rende la pareille!</h6>
+            <a href="https://schaskia.neocities.org"><img src="/assets/images/buttons/schaskia_button.gif"  class="button-image" /></a>
+            <hr>
+            <h4>D'autres sites web turbo cools</h4>
+            <h6>Allô mes voisins! Hiiii haii hey hi :3</h6>
+            <a target="_blank" href="https://xsolimini.fr"><img src="https://xsolimini.fr/images/xsoliminishq88x31.gif" class="button-image"></a>
+        </div>
+    </div>
+    <div id="webrings" class="page-box">
+        <div id="header-webrings" class="header">
+            <h2>Webrings!</h2>
+        </div>
+        <div class="webrings">
+            <div id='francophonering'>
+                <script type="text/javascript" src="https://francophonering.neocities.org/onionring-variables.js"></script>
+                <script type="text/javascript" src="https://francophonering.neocities.org/onionring-widget.js"></script>
+            </div>
+            <div id="transingtheinternet">
+                <script src="https://transring.neocities.org/ring.js"></script>
+            </div>
+        </div>
+    </div>
+    <div id="features" class="page-box">
+        <div id="header-features" class="header">
+            <h2>Choses à faire</h2>
+        </div>
+        <div class="features">
+            <ul>
+                <li>Rajouter un RSS feed à mon journal</li>
+                <li>Fixer tous les petits problèmes de CSS</li>
+                <li>Digitiser toutes les cartes de 1000 Cartes Blanches Vierges v1</li>
+                <li>Ne pas abandonner en cours de route</li>
+            </ul>
+        </div>
+    </div>
+</div>

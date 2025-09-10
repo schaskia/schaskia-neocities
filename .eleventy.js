@@ -19,6 +19,20 @@ module.exports = function (eleventyConfig) {
         return shuffledArray;
     });
 
+    eleventyConfig.addCollection("journal_en", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/en/journal-posts/*.html");
+    });
+    eleventyConfig.addCollection("journal_fr", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/fr/journal-posts/*.html");
+    });
+
+    eleventyConfig.addCollection("albums_en", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/en/albums/*.html");
+    });
+    eleventyConfig.addCollection("albums_fr", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/fr/albums/*.html");
+    });
+
     return {
         dir: {
             input: 'src',

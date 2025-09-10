@@ -1,0 +1,24 @@
+---
+layout: layout/base.html
+title: Tire-moi de mon ermitage
+lang: "fr"
+langAltUrl: "/en/contact"
+---
+{% block styles %}
+    <link rel="stylesheet" href="/css/contact.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    {% include "header-links.html" %}
+    {% for contact in contact %}
+        <div class="contact-wrapper">
+            <a href="{{ contact.url }}">
+                <div class="contact-info">
+                    <h2 class="contact-type">{{ contact.type }}</h2>
+                    <img class="contact-icon" src="{{ contact.icon }}" alt="{{ contact.type }}"></h6>
+                    <p class="contact-user">{{ contact.user }}</p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

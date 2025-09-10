@@ -17,7 +17,7 @@
           <h1 class="post-title">{{ title }}</h1>
           <p><em class="post-date">{{ posted }}</em></p>
           {{content | safe}} 
-          <a href="/journal" class="back-button">← Retour au Journal</a>
+          <a href="/{{ lang }}/journal" class="back-button">{% if lang == "fr" %}← Retour au Journal{% else %}← Back to the Journal{% endif %}</a>
           <div class="footer-text">
             <h6>© 2025 Saskia Schnéegans — {{ footer }}</h6>
           </div>

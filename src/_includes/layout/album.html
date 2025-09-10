@@ -21,7 +21,7 @@
           <p class="post-date"><em>{{ year }}</em></p>
           <h6 class="post-genre">{{ genre }}</h6>
           {{content | safe}} 
-          <a href="/album-gallery" class="back-button">← Retour au Disquaire</a>
+          <a href="/{{ lang }}/album-gallery" class="back-button">{% if lang == "fr" %}← Retour au Disquaire{% else %}← Back to the CD Shop{% endif %}</a>
           <div class="footer-text">
             <h6>© 2025 Saskia Schnéegans</h6>
           </div>
