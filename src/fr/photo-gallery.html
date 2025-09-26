@@ -8,16 +8,18 @@ lang: "fr"
 <link rel="stylesheet" href="/css/photo-gallery.css">
 {% endblock %}
 
-<div class="page-wrapper">
+<div class="gallery-container">
     {% include "header-links.html" %}
-    {% for photo in photos_fr | shuffle %}
-        <div class="photo-wrapper">
-            <img src="{{ photo.src }}" class="photo-source" alt="{{ photo.title }}" loading="lazy">
-            <div class="photo-info {{ photo.type }}">
-                <h2 class="photo-title">{{ photo.title }}</h2>
-                <p class="photo-credits">{{ photo.credits }}</p>
-                <h6 class="photo-description">{{ photo.desc }}</h6>
+    <div class="page-wrapper">
+        {% for photo in photos_fr | shuffle %}
+            <div class="photo-wrapper">
+                <img src="{{ photo.src }}" class="photo-source" alt="{{ photo.title }}" loading="lazy">
+                <div class="photo-info {{ photo.type }}">
+                    <h2 class="photo-title">{{ photo.title }}</h2>
+                    <p class="photo-credits">{{ photo.credits }}</p>
+                    <h6 class="photo-description">{{ photo.desc }}</h6>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>

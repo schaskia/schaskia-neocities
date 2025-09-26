@@ -7,9 +7,7 @@ body {
   background-size: cover;
 }
 
-.page-wrapper {
-  column-count: 4;
-  column-gap: 1.2rem;
+.gallery-container {
   width: 70%;
   margin: 2rem auto;
   padding: 1rem;
@@ -17,37 +15,14 @@ body {
   border-radius: 2rem;
 }
 
-.header-links {
+.page-wrapper {
+  column-count: 4;
+  column-gap: 1.2rem;
   width: 100%;
-  display: block;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  border-radius: 2rem;
-  background-color: var(--color-box);
-  box-shadow: 0.25rem 0.25rem 0.5rem #0a322f87;
-  column-span: all;
-  break-inside: avoid;
-}
-.header-links ul {
-  list-style-type: none;
-  padding: 1.5rem 0;
   margin: 0;
-}
-.header-links li {
-  text-decoration: none;
-  display: inline;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  margin: 1rem 0.5rem;
-  box-shadow: 0.1rem 0.1rem 0.25rem #0a0f20a2;
-}
-.header-button {
-  display: inline;
-  text-decoration: none;
-  margin: 1rem 0.5rem;
-  width: 100%;
-  height: auto;
-  color: var(--color-text);
+  padding: 0;
+  background: none;
+  border-radius: 0;
 }
 
 .photo-wrapper {
@@ -119,18 +94,19 @@ h6 {
 }
 
 /* Responsive columns */
-@media (max-width: 1200px) {
-  .page-wrapper {
-    column-count: 3;
+@media (max-width: 768px) {
+  .gallery-container {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0.5rem;
   }
-}
-@media (max-width: 900px) {
   .page-wrapper {
     column-count: 2;
   }
-}
-@media (max-width: 600px) {
-  .page-wrapper {
-    column-count: 1;
+  .photo-info {
+    font-size: 0.8rem;
+  }
+  h2, p, h6 {
+    margin: 0.2rem;
   }
 }

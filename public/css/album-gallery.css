@@ -25,36 +25,6 @@ body {
   width: auto;
 }
 
-.header-links {
-  grid-column: 1 / span 3;
-  text-align: center;
-  margin: 0.5rem;
-  border-radius: 2rem;
-  background-color: var(--color-box);
-  box-shadow: 0.25rem 0.25rem 0.5rem #44212587;
-}
-.header-links ul {
-  list-style-type: none;
-  padding: 1.5rem 0;
-  margin: 0;
-}
-.header-links li {
-  text-decoration: none;
-  display: inline;
-  border-radius: 1rem;
-  padding: 0.5rem;
-  margin: 1rem 0.5rem;
-  box-shadow: 0.1rem 0.1rem 0.25rem #44212587;
-}
-.header-button {
-  display: inline;
-  text-decoration: none;
-  margin: 1rem 0.5rem;
-  width: 100%;
-  height: auto;
-  color: var(--color-text);
-}
-
 .album-cover {
   width: 100%;
   height: auto;
@@ -115,4 +85,22 @@ body {
 
 h2, p {
     color: var(--color-box);
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    width: 90%;
+    grid-template-columns: auto auto;
+    padding: 1rem;
+  }
+  .post-wrapper {
+    width: 90%;
+    border-radius: 0.8rem;
+  }
+  .album-info {
+    border-radius: 0.8rem;
+  }
+  .album-cover {
+    border-radius: 0.8rem;
+  }
 }

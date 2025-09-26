@@ -19,7 +19,7 @@ body {
 .post-wrapper {
     width: 90%;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 1rem 2rem;
     border-radius: 2rem;
     background-color: var(--color-box);
     box-shadow: 0.25rem 0.25rem 0.5rem #12283c87;
@@ -39,7 +39,7 @@ hr {
     border: 0;
     height: 1.5px;
     background: var(--color-wrapper02);
-    margin: 1.5rem;
+    margin: 2rem 0;
     opacity: 0.3;
 }
 
@@ -48,6 +48,11 @@ ul {
 }
 li {
     margin: 0.5rem
+}
+a {
+    display: inline;
+    color: var(--color-wrapper02);
+    text-decoration: underline;
 }
 
 .end-logo {
@@ -69,4 +74,53 @@ li {
     box-shadow: 0.1rem 0.1rem 0.25rem #12283c87;
     text-decoration: none;
     color: inherit;
+}
+.external-link {
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .page-wrapper {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+
+    .post-wrapper {
+        width: 95%;
+        margin: 1rem auto;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-text {
+        max-width: 90%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    .back-button {
+        width: 50%;
+        min-width: 6rem;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+    .end-logo {
+        width: 8%;
+    }
+
+    body {
+        font-size: 0.8rem;
+    }
+    h1 {
+        margin: 0.5rem 0;
+    }
+    h6 {
+        font-size: 0.75rem;
+    }
+}
+blockquote {
+    margin: 1.5rem 2.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-left: 0.1rem solid var(--color-text-muted);
 }
