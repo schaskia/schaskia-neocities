@@ -54,6 +54,13 @@ a {
     color: var(--color-wrapper02);
     text-decoration: underline;
 }
+blockquote {
+    margin: 1.5rem 2.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    border-left: 0.1rem solid var(--color-text-muted);
+}
 
 .end-logo {
     display: block;
@@ -116,11 +123,7 @@ a {
     h6 {
         font-size: 0.75rem;
     }
-}
-blockquote {
-    margin: 1.5rem 2.5rem;
-    padding: 0.5rem 1rem;
-    color: var(--color-text-muted);
-    font-style: italic;
-    border-left: 0.1rem solid var(--color-text-muted);
+    block-quote {
+        margin: 0.8rem;
+    }
 }
