@@ -104,12 +104,13 @@ blockquote {
     padding: 0.5rem 1rem;
     color: var(--color-text-muted);
     font-style: italic;
-    border-left: 0.1rem solid var(--color-text-muted);
+    border-left: 0.1rem solid;
+    border-color: var(--color-accent03);
 }
 
 @media (max-width: 768px) {
     .page-wrapper {
-        width: 90%;
+        width: 98%;
         margin: 1rem auto;
         padding: 1rem;
     }
@@ -134,5 +135,8 @@ blockquote {
     }
     body {
         font-size: 0.8rem;
+    }
+    blockquote {
+        margin: 1rem;
     }
 }

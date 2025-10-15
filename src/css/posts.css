@@ -87,13 +87,13 @@ blockquote {
 }
 @media (max-width: 768px) {
     .page-wrapper {
-        width: 90%;
+        width: 98%;
         margin: 1rem auto;
         padding: 0.5rem;
     }
 
     .post-wrapper {
-        width: 95%;
+        width: 96%;
         margin: 1rem auto;
         padding: 1.5rem 1rem;
     }
@@ -123,7 +123,7 @@ blockquote {
     h6 {
         font-size: 0.75rem;
     }
-    block-quote {
+    blockquote {
         margin: 0.8rem;
     }
 }
