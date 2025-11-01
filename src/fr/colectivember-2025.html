@@ -1,0 +1,33 @@
+---
+layout: layout/base.html
+title: Colectivembre 2025
+langAltUrl: "/en/colectivember-2025"
+lang: "fr"
+---
+{% block styles %}
+<link rel="stylesheet" href="/css/col25/home.css">
+{% endblock %}
+
+<div class="page-wrapper">
+    {% include "header-links.html" %}
+    <div class="intro">
+        <h1>Colectivembre 2025!!</h1>
+        <h4>11 artistes pour le 11ème mois de l'année</h4>
+        <p>Eyup! Bienvenue sur la page d'accueil de ce projet starté d'un désir de vouloir montrer à tout le monde à quel point mes amis sont cools. Chaque post ici a été créé par une personne différente, avec des styles d'écriture et des looks différents. Si jamais t'aimes ce qu'une certaine personne a écrit, hésite pas à l'écrire dans la section commentaires dédiée à cette page!</p>
+    </div>
+    {% for col25 in collections.col25_fr | reverse %}
+        <div class="post-wrapper">
+            <a href="{{ col25.url }}">
+                <h1 class="post-title">{{ col25.data.title }}</h1>
+                <h6 class="post-author">{{ col25.data.author }}</h6>
+                <p class="post-date">{{ col25.data.posted }}</p>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+    <!-- begin wwww.htmlcommentbox.com -->
+     <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Widget</a> is loading comments...</div>
+    <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/simple/skin.css" />
+    <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24FbRmhOq%2FyXySC5ynq.Oqm1"+"&opts=16798&num=10&ts=1761627318805");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*--!>*/ </script>
+    <!-- end www.htmlcommentbox.com -->
+     <link rel="stylesheet" href="/css/col25/home.css">

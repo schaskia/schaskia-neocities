@@ -1,0 +1,41 @@
+@import url('/css/global.css');
+
+:root {
+    --color-background: #27141d;
+    --color-wrapper: #47272f;
+    --color-accent: #9c392d;
+    --color-box: #f9e4ca;
+    --color-box-hover: #eccfa8;
+    --color-text: #27141d;
+    --color-text-muted: #47272f;
+}
+
+body {
+    background-color: var(--color-background);
+    background-image: none;
+}
+
+.page-wrapper {
+    height: 50vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;
+}
+.image-center {
+    height: 25%;
+    width: auto;
+}
+h1, p {
+    color: var(--color-box);
+}
+
+.back-button {
+    margin: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    background-color: var(--color-accent);
+    color: var(--color-box);
+    border-radius: 2rem;
+}

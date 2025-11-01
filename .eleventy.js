@@ -32,6 +32,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("albums_fr", function(collectionApi) {
         return collectionApi.getFilteredByGlob("src/fr/albums/*.html");
     });
+    
+    eleventyConfig.addCollection("col25_fr", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/fr/col25/*.html");
+    });
+    eleventyConfig.addCollection("col25_en", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/en/col25/*.html");
+    });
 
     return {
         dir: {

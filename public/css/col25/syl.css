@@ -1,0 +1,87 @@
+@import url('./global.css');
+
+:root {
+    --color-background: #100b13;
+    --color-wrapper: #47272f;
+    --color-accent: #b349c8;
+    --color-box: #f9e4ca;
+    --color-box-hover: #eccfa8;
+    --color-text: #e6d2f8;
+    --color-text-muted: #c7afdc;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(132deg, rgb(221, 2, 3) 0.00%, rgb(251, 137, 2) 20.00%, rgb(248, 235, 5) 40.00%, rgb(0, 127, 38) 60.00%, rgb(5, 75, 249) 80.00%, rgb(114, 6, 130) 100.00%);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.page-wrapper {
+    background-color: var(--color-background);
+    min-height: calc(100vh - 1rem); /* 1rem border on top and bottom */
+    width: calc(100vw - 1rem);      /* 1rem border on left and right */
+    margin: 0.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 24px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center; 
+}
+
+h1, .post-author, .post-date, p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+h1 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+
+#personality-quiz {
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  text-align: left;
+}
+
+.quiz-question-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.quiz-option {
+  margin-right: 0.5rem;
+}
+
+.quiz-option-label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+#next-btn, #submit-btn, #start-btn {
+    display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#next-btn:hover, #submit-btn:hover {
+  background: var(--color-accent);
+}
