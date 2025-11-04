@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'Cochin';
+  src: url('/assets/fonts/Cochin.ttc') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	--color-background: #a8af4f;
+	--color-wrapper: #47272f;
+	--color-accent: #9c392d;
+	--color-box: #f9e4ca;
+	--color-box-hover: #eccfa8;
+	--color-text: #4b2428;
+	--color-text-muted: #5e3433;
+}
+
+body {
+	background: #C28334;
+}
+blockquote {
+    font-style: italic;
+    color: var(--color-text-muted);
+}
+h1, h2 {
+    font-family: Cochin;
+}
+h3, h4, h5, p, blockquote, li {
+    font-family:'Times New Roman', Times, serif;
+}
+p {
+    font-size: 1.1em;
+}
+
+.page-wrapper {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.text-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2vw;
+    margin-top: 2em;
+}
+
+#text-box-04, #text-box-05 {
+    flex: 1 1 0;
+    max-width: 600px;
+}
+
+.text-box, .title-box {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.text-box img, .title-box img {
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
+#title-box-02 {
+    rotate: -3deg;
+}
+
+#title-box-01 img { width: 60%; }
+#title-box-02 img { width: 60%; }
+#title-box-03 img { width: 60%; }
+#title-box-04 img { width: 50%; }
+
+#text-box-01 img { width: 35%; }
+#text-box-02 img { width: 70%; }
+#text-box-03 img { width: 85%; }
+#text-box-04 img { width: 140%; }
+#text-box-05 img { width: 80%; }
+
+.text, .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#title-01 {
+    top: 36%;
+    left: 52%;
+    rotate: -4deg;
+}
+#title-02 {
+    top: 45%;
+    rotate: 1deg;
+}
+#title-04 {
+    top: 63%;
+    rotate: -4deg;
+}
+
+#text-01 {
+    max-width: 250px;
+    top: 55%;
+    left: 48%;
+    text-align: left;
+    rotate: 0.5deg;
+}
+#text-02 {
+    top: 60%;
+    left: 55%;
+    text-align: right;
+    rotate: 2deg;
+}
+#text-03 {
+    top: 55%;
+    left: 48%;
+    text-align: center;
+    min-width: 1000px;
+    column-count: 2;
+    rotate: 2.5deg;
+}
+#text-04 {
+    text-align: left;
+    min-width: 500px;
+    top: 48%;
+    left: 52%;
+    rotate: -2.5deg;
+}
+li {
+    margin-left: 10em;
+}
+#text-05 {
+    top: 38%;
+    left: 42%;
+    text-align: left;
+    max-width: 300px;
+    rotate: -1.5deg;
+}
+
+/* Sticker grid as floating layer */
+.sticker-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.sticker-item {
+    position: absolute;
+    pointer-events: auto;
+}
+
+.sticker-item img {
+    width: 50%;
+    height: auto;
+}
+
+/* Random positions and rotations for 25 stickers */
+#sticker-01 { top: 7%; left: 15%; transform: rotate(2deg); }
+#sticker-02 { top: 1%; left: 74%; transform: rotate(-4deg); }
+#sticker-03 { top: 28%; left: 12%; transform: rotate(5deg); }
+#sticker-04 { top: 6%; left: 60%; transform: rotate(-2deg); }
+#sticker-05 { top: 30%; left: 45%; transform: rotate(3deg); }
+#sticker-06 { top: 32%; left: 80%; transform: rotate(-5deg); }
+#sticker-07 { top: 46%; left: 8%; transform: rotate(36deg); }
+#sticker-08 { top: 77%; left: 11%; transform: rotate(-3deg); }
+#sticker-09 { top: 48%; left: 62%; transform: rotate(98deg); width: 50%; }
+#sticker-10 { top: 57%; left: 40%; transform: rotate(4deg); width: 50%; }
+#sticker-11 { top: 14%; left: 60%; transform: rotate(5deg); width: 50%; }
+#sticker-12 { top: 60%; left: 75%; transform: rotate(23deg); width: 40%; }
+#sticker-13 { top: 52%; left: 2%; transform: rotate(-11deg); width: 40%; }
+#sticker-14 { top: 34%; left: -3%; transform: rotate(-30deg); width: 70%; }
+#sticker-15 { top: 81%; left: 73%; transform: rotate(21deg); width: 40%; }
+#sticker-16 { top: 88%; left: 45%; transform: rotate(-4deg); }
+#sticker-17 { top: 83%; left: 12%; transform: rotate(-10deg); width: 28%;}
+#sticker-18 { top: 12%; left: 7%; transform: rotate(-5deg); width: 50%; }
+#sticker-19 { top: 12%; left: 80%; transform: rotate(4deg); }
+#sticker-20 { top: 26%; left: 85%; transform: rotate(-1deg); }
+#sticker-21 { top: 54%; left: 80%; transform: rotate(5deg); }
+#sticker-22 { top: 76%; left: 85%; transform: rotate(-5deg); }
+#sticker-23 { top: 95%; left: 47%; transform: rotate(2deg); width: 20%; }
+#sticker-24 { top: 18%; left: 80%; transform: rotate(-15deg); width: 30%; }
+#sticker-25 { top: 1%; left: 3%; transform: rotate(-12deg); width: 50%; }
+
+.back-link img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.back-link img:hover {
+    transform: scale(1.05);
+    filter: brightness(0.5);
+}
+
+
+
+
