@@ -60,41 +60,42 @@
 }
 
 
-#zaba01 { top: 47vh; left: 52vw; transform: rotate(3deg); z-index: 4;}
-#zaba02 { top: 57vh; left: 56vw; transform: rotate(-12deg); z-index: 5; }
-#zaba03 { top: 62vh; left: 54vw; transform: rotate(4deg); }
-#zaba04 { top: 45vh; left: 62vw; transform: rotate(-3deg); z-index: 3; }
-#zaba05 { top: 54vh; left: 64vw; transform: rotate(8deg); }
-#zaba06 { top: 62vh; left: 63vw; transform: rotate(-6deg); z-index: 1; }
+
+#zaba01 { top: 54vh; left: 52vw; transform: rotate(3deg); z-index: 4;}
+#zaba02 { top: 64vh; left: 56vw; transform: rotate(-12deg); z-index: 5; }
+#zaba03 { top: 69vh; left: 54vw; transform: rotate(4deg); }
+#zaba04 { top: 52vh; left: 62vw; transform: rotate(-3deg); z-index: 3; }
+#zaba05 { top: 61vh; left: 64vw; transform: rotate(8deg); }
+#zaba06 { top: 69vh; left: 63vw; transform: rotate(-6deg); z-index: 1; }
 
 #inrainbows01 { top: 95vh; left: 38vw; transform: rotate(-5deg); z-index: 4; }
 #inrainbows02 { top: 119vh; left: 30vw; transform: rotate(7deg); z-index: 2; }
-#inrainbows03 { top: 108vh; left: 35vw; transform: rotate(-3deg); }
-#inrainbows04 { top: 94vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
-#inrainbows05 { top: 99vh; left: 25vw; transform: rotate(-8deg); }
-#inrainbows06 { top: 116vh; left: 23vw; transform: rotate(6deg); z-index: 1; }
+#inrainbows03 { top: 109vh; left: 35vw; transform: rotate(-3deg); }
+#inrainbows04 { top: 95vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
+#inrainbows05 { top: 100vh; left: 25vw; transform: rotate(-8deg); }
+#inrainbows06 { top: 117vh; left: 23vw; transform: rotate(6deg); z-index: 1; }
 
-#boltcutters01 { top: 135vh; left: 55vw; transform: rotate(4deg); z-index: 4; }
-#boltcutters02 { top: 148vh; left: 57vw; transform: rotate(-7deg); z-index: 2; }
-#boltcutters03 { top: 166vh; left: 56vw; transform: rotate(5deg); }
-#boltcutters04 { top: 139vh; left: 64vw; transform: rotate(-4deg); z-index: 3; }
-#boltcutters05 { top: 153vh; left: 67vw; transform: rotate(9deg); }
-#boltcutters06 { top: 171vh; left: 65vw; transform: rotate(-5deg); z-index: 3; }
+#boltcutters01 { top: 136vh; left: 55vw; transform: rotate(4deg); z-index: 4; }
+#boltcutters02 { top: 149vh; left: 57vw; transform: rotate(-7deg); z-index: 2; }
+#boltcutters03 { top: 167vh; left: 56vw; transform: rotate(5deg); }
+#boltcutters04 { top: 140vh; left: 64vw; transform: rotate(-4deg); z-index: 3; }
+#boltcutters05 { top: 154vh; left: 67vw; transform: rotate(9deg); }
+#boltcutters06 { top: 172vh; left: 65vw; transform: rotate(-5deg); z-index: 3; }
 
 #twinfan01 { top: 192vh; left: 37vw; transform: rotate(-6deg); z-index: 4; }
 #twinfan02 { top: 206vh; left: 34vw; transform: rotate(8deg); z-index: 3; }
-#twinfan03 { top: 220vh; left: 36vw; transform: rotate(-4deg); z-index: 4; }
+#twinfan03 { top: 221vh; left: 36vw; transform: rotate(-4deg); z-index: 4; }
 #twinfan04 { top: 235vh; left: 39vw; transform: rotate(20deg); }
 #twinfan05 { top: 202vh; left: 28vw; transform: rotate(-9deg); }
 #twinfan06 { top: 211vh; left: 25vw; transform: rotate(7deg); z-index: 1; }
 #twinfan07 { top: 227vh; left: 30vw; transform: rotate(-3deg); z-index: 2; }
 
-#gliss01 { top: 265vh; left: 54vw; transform: rotate(5deg); z-index: 2;}    
-#gliss02 { top: 275vh; left: 52vw; transform: rotate(-8deg); z-index: 4; }
-#gliss03 { top: 293vh; left: 55vw; transform: rotate(4deg); }
-#gliss04 { top: 267vh; left: 64vw; transform: rotate(-5deg); z-index: 3; }
-#gliss05 { top: 289vh; left: 65vw; transform: rotate(10deg); }
-#gliss06 { top: 282vh; left: 59vw; transform: rotate(-6deg); z-index: 5; }
+#gliss01 { top: 263vh; left: 54vw; transform: rotate(5deg); z-index: 2;}    
+#gliss02 { top: 273vh; left: 52vw; transform: rotate(-8deg); z-index: 4; }
+#gliss03 { top: 292vh; left: 55vw; transform: rotate(4deg); }
+#gliss04 { top: 266vh; left: 64vw; transform: rotate(-5deg); z-index: 3; }
+#gliss05 { top: 287vh; left: 65vw; transform: rotate(10deg); }
+#gliss06 { top: 280vh; left: 59vw; transform: rotate(-6deg); z-index: 5; }
 
 #feels01 { top: 315vh; left: 31vw; transform: rotate(-4deg); z-index: 4; }
 #feels02 { top: 322vh; left: 38vw; transform: rotate(6deg); z-index: 2; }
