@@ -59,48 +59,49 @@
     border: 2px solid white;
 }
 
-#zaba01 { top: 52vh; left: 52vw; transform: rotate(3deg); z-index: 4;}
-#zaba02 { top: 62vh; left: 56vw; transform: rotate(-12deg); z-index: 5; }
-#zaba03 { top: 70vh; left: 54vw; transform: rotate(4deg); }
-#zaba04 { top: 53vh; left: 62vw; transform: rotate(-3deg); z-index: 3; }
-#zaba05 { top: 62vh; left: 64vw; transform: rotate(8deg); }
-#zaba06 { top: 77vh; left: 63vw; transform: rotate(-6deg); z-index: 1; }
 
-#inrainbows01 { top: 100vh; left: 38vw; transform: rotate(-5deg); z-index: 4; }
-#inrainbows02 { top: 124vh; left: 30vw; transform: rotate(7deg); z-index: 2; }
-#inrainbows03 { top: 116vh; left: 35vw; transform: rotate(-3deg); }
-#inrainbows04 { top: 102vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
-#inrainbows05 { top: 109vh; left: 25vw; transform: rotate(-8deg); }
-#inrainbows06 { top: 126vh; left: 23vw; transform: rotate(6deg); z-index: 1; }
+#zaba01 { top: 47vh; left: 52vw; transform: rotate(3deg); z-index: 4;}
+#zaba02 { top: 57vh; left: 56vw; transform: rotate(-12deg); z-index: 5; }
+#zaba03 { top: 62vh; left: 54vw; transform: rotate(4deg); }
+#zaba04 { top: 45vh; left: 62vw; transform: rotate(-3deg); z-index: 3; }
+#zaba05 { top: 54vh; left: 64vw; transform: rotate(8deg); }
+#zaba06 { top: 62vh; left: 63vw; transform: rotate(-6deg); z-index: 1; }
 
-#boltcutters01 { top: 143vh; left: 55vw; transform: rotate(4deg); z-index: 4; }
-#boltcutters02 { top: 156vh; left: 57vw; transform: rotate(-7deg); z-index: 2; }
-#boltcutters03 { top: 174vh; left: 56vw; transform: rotate(5deg); }
-#boltcutters04 { top: 147vh; left: 64vw; transform: rotate(-4deg); z-index: 3; }
-#boltcutters05 { top: 161vh; left: 67vw; transform: rotate(9deg); }
-#boltcutters06 { top: 179vh; left: 65vw; transform: rotate(-5deg); z-index: 3; }
+#inrainbows01 { top: 95vh; left: 38vw; transform: rotate(-5deg); z-index: 4; }
+#inrainbows02 { top: 119vh; left: 30vw; transform: rotate(7deg); z-index: 2; }
+#inrainbows03 { top: 108vh; left: 35vw; transform: rotate(-3deg); }
+#inrainbows04 { top: 94vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
+#inrainbows05 { top: 99vh; left: 25vw; transform: rotate(-8deg); }
+#inrainbows06 { top: 116vh; left: 23vw; transform: rotate(6deg); z-index: 1; }
 
-#twinfan01 { top: 200vh; left: 37vw; transform: rotate(-6deg); z-index: 4; }
-#twinfan02 { top: 214vh; left: 34vw; transform: rotate(8deg); z-index: 3; }
-#twinfan03 { top: 228vh; left: 36vw; transform: rotate(-4deg); z-index: 4; }
-#twinfan04 { top: 243vh; left: 39vw; transform: rotate(20deg); }
-#twinfan05 { top: 210vh; left: 28vw; transform: rotate(-9deg); }
-#twinfan06 { top: 219vh; left: 25vw; transform: rotate(7deg); z-index: 1; }
-#twinfan07 { top: 235vh; left: 30vw; transform: rotate(-3deg); z-index: 2; }
+#boltcutters01 { top: 135vh; left: 55vw; transform: rotate(4deg); z-index: 4; }
+#boltcutters02 { top: 148vh; left: 57vw; transform: rotate(-7deg); z-index: 2; }
+#boltcutters03 { top: 166vh; left: 56vw; transform: rotate(5deg); }
+#boltcutters04 { top: 139vh; left: 64vw; transform: rotate(-4deg); z-index: 3; }
+#boltcutters05 { top: 153vh; left: 67vw; transform: rotate(9deg); }
+#boltcutters06 { top: 171vh; left: 65vw; transform: rotate(-5deg); z-index: 3; }
 
-#gliss01 { top: 275vh; left: 54vw; transform: rotate(5deg); z-index: 2;}    
-#gliss02 { top: 285vh; left: 52vw; transform: rotate(-8deg); z-index: 4; }
-#gliss03 { top: 303vh; left: 55vw; transform: rotate(4deg); }
-#gliss04 { top: 277vh; left: 64vw; transform: rotate(-5deg); z-index: 3; }
-#gliss05 { top: 299vh; left: 65vw; transform: rotate(10deg); }
-#gliss06 { top: 292vh; left: 59vw; transform: rotate(-6deg); z-index: 5; }
+#twinfan01 { top: 192vh; left: 37vw; transform: rotate(-6deg); z-index: 4; }
+#twinfan02 { top: 206vh; left: 34vw; transform: rotate(8deg); z-index: 3; }
+#twinfan03 { top: 220vh; left: 36vw; transform: rotate(-4deg); z-index: 4; }
+#twinfan04 { top: 235vh; left: 39vw; transform: rotate(20deg); }
+#twinfan05 { top: 202vh; left: 28vw; transform: rotate(-9deg); }
+#twinfan06 { top: 211vh; left: 25vw; transform: rotate(7deg); z-index: 1; }
+#twinfan07 { top: 227vh; left: 30vw; transform: rotate(-3deg); z-index: 2; }
 
-#feels01 { top: 330vh; left: 31vw; transform: rotate(-4deg); z-index: 4; }
-#feels02 { top: 337vh; left: 38vw; transform: rotate(6deg); z-index: 2; }
-#feels03 { top: 341vh; left: 24vw; transform: rotate(-3deg); }
-#feels04 { top: 345vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
-#feels05 { top: 347vh; left: 37vw; transform: rotate(-7deg); }
-#feels06 { top: 356vh; left: 28vw; transform: rotate(5deg); z-index: 4; }
+#gliss01 { top: 265vh; left: 54vw; transform: rotate(5deg); z-index: 2;}    
+#gliss02 { top: 275vh; left: 52vw; transform: rotate(-8deg); z-index: 4; }
+#gliss03 { top: 293vh; left: 55vw; transform: rotate(4deg); }
+#gliss04 { top: 267vh; left: 64vw; transform: rotate(-5deg); z-index: 3; }
+#gliss05 { top: 289vh; left: 65vw; transform: rotate(10deg); }
+#gliss06 { top: 282vh; left: 59vw; transform: rotate(-6deg); z-index: 5; }
+
+#feels01 { top: 315vh; left: 31vw; transform: rotate(-4deg); z-index: 4; }
+#feels02 { top: 322vh; left: 38vw; transform: rotate(6deg); z-index: 2; }
+#feels03 { top: 326vh; left: 24vw; transform: rotate(-3deg); }
+#feels04 { top: 330vh; left: 32vw; transform: rotate(4deg); z-index: 3; }
+#feels05 { top: 332vh; left: 37vw; transform: rotate(-7deg); }
+#feels06 { top: 341vh; left: 28vw; transform: rotate(5deg); z-index: 4; }
 
 
 .text-left p {
