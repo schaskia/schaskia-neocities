@@ -20,5 +20,9 @@
                 </svg>
             </button>
 
-            <audio src="{{ audioSrc }}"></audio>
+            <audio 
+                src="{{ audioSrc }}"
+                data-start="{{ audioStart | default(0) }}"
+                data-end="{{ audioEnd | default(0) }}"
+            ></audio>
         </div>

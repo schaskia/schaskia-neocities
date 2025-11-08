@@ -13,10 +13,11 @@
 }
 
 .audio-player {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 0 0.5em;
+  vertical-align: middle;
 }
 
 .circle-btn {
