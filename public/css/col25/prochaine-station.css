@@ -1,0 +1,9 @@
+@import url('./global.css');
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}

@@ -1,13 +1,36 @@
+/* Modal for badge sharing */
+.badge-modal-content {
+  background: var(--color-modal, #8a8276);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  position: relative;
+}
 @import url('./global.css');
 
 :root {
-    --color-background: #100b13;
-    --color-wrapper: #47272f;
-    --color-accent: #b349c8;
-    --color-box: #f9e4ca;
-    --color-box-hover: #eccfa8;
-    --color-text: #e6d2f8;
-    --color-text-muted: #c7afdc;
+  --color-background: #100b13;
+  --color-wrapper: #47272f;
+  --color-accent: #ada598;
+  --color-accent-muted: #8a8276;
+  --color-box: #f9e4ca;
+  --color-box-hover: #eccfa8;
+  --color-text: #f9f4e8;
+  --color-text-muted: #eee3d7;
+  --color-modal: #8a8276;
+}
+@font-face {
+    font-family: 'Hi Melody';
+    src: url('/assets/fonts/HiMelody-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Schoolbell';
+    src: url('/assets/fonts/Schoolbell-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -16,10 +39,39 @@ body {
     margin: 0;
     padding: 0;
     color: var(--color-text);
+    font-family: 'Schoolbell', cursive, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Hi Melody', cursive, sans-serif;
+}
+h1 {
+  font-size: 6rem;
+  border-bottom: 6px solid var(--color-text);
+  padding-bottom: 0;
+}
+h2 {
+  font-size: 5.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+h3 {
+  font-size: 4rem;
+}
+h4, h5, h6 {
+  font-size: 2.5rem;
+  margin: 0.5rem;
+}
+p, label, button {
+  font-size: 1.3rem;
+}
+label, span {
+  font-family: "Hi Melody", cursive, sans-serif;
 }
 
 .page-wrapper {
-    background-color: var(--color-background);
+  background-image: url(/assets/images/col25/syl/color-chan-bg.png);
+  background-size: cover;
+  background-position: center 40%;
     min-height: calc(100vh - 1rem); /* 1rem border on top and bottom */
     width: calc(100vw - 1rem);      /* 1rem border on left and right */
     margin: 0.5rem;
@@ -30,6 +82,33 @@ body {
     justify-content: center; /* vertical centering */
     align-items: center; 
 }
+.content-wrapper {
+    width: 80%;
+    height: 80%;
+    padding: 2rem;
+}
+/* Intro images grid: 5 columns x 2 rows */
+.intro-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.intro-images img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+.intro-images img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
 
 h1, .post-author, .post-date, p {
   text-align: center;
@@ -38,50 +117,129 @@ h1, .post-author, .post-date, p {
   display: block;
 }
 
-h1 {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-}
-
 
 #personality-quiz {
-  margin: 2rem auto;
+  margin: 2rem 0.5rem;
   padding: 1rem;
   border-radius: 1rem;
-  max-width: 500px;
   text-align: left;
 }
 
 .quiz-question-label {
-  font-size: 1.2rem;
+  font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
+  line-height: 1.2;
 }
 
 .quiz-option {
   margin-right: 0.5rem;
 }
 
-.quiz-option-label {
-  font-size: 1rem;
+
+/* Make radio buttons larger and more visible */
+form#personality-quiz input[type="radio"] {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: var(--color-accent);
+  vertical-align: auto;
+  margin-right: 0.5em;
+}
+form#personality-quiz .quiz-option-label {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  display: inline-block;
+  display: inline;
 }
 
-#next-btn, #submit-btn, #start-btn {
-    display: block;
-  margin: 1rem auto;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
+/* Removed old button styles; .quiz-btn and .quiz-btn.alt now control all quiz button appearance and hover effects */
+/* Quiz result layout */
+.quiz-btn {
+  font-size: 1.5rem;
   border-radius: 999px;
-  border: none;
   background: var(--color-accent);
   color: var(--color-text);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem;
   cursor: pointer;
   transition: background 0.2s;
+  font-family: 'Hi Melody', cursive, sans-serif;
+}
+.quiz-btn.alt {
+  font-size: 1.3em;
+  background: #eee;
+  color: #222;
+  padding: 0.4rem 1.2rem;
+}
+.main-btn {
+  background: var(--color-accent);
+  color: #fff;
+}
+.main-btn:hover {
+  background: var(--color-accent-muted);
+}
+.quiz-btn:hover {
+  background: var(--color-accent-muted);
+}
+.quiz-btn.alt:hover {
+  background: #ddd;
 }
 
-#next-btn:hover, #submit-btn:hover {
-  background: var(--color-accent);
+.quiz-result-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+}
+.quiz-result-title {
+  color: var(--color-title);
+}
+.quiz-result-desc {
+  text-align: right;
+  color: var(--color-answer);
+}
+/* Modal for badge sharing */
+.badge-modal-content {
+  background: var(--color-modal);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  position: relative;
+}
+.quiz-result-image {
+  width: 40%;
+  height: auto;
+  margin: 2rem 0 0 0;
+  transform: rotate(-5deg);
+  border: solid 8px white;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.quiz-result-desc {
+  text-align: right;
+  color: var(--color-answer);
+  margin: 0 0 0 2rem;
+  font-size: 1.5rem;
+  align-self: center;
+  
+}
+
+.quiz-result-magnet {
+  position: absolute;
+  left: 15%;
+  top: -3%;
+  width: 7%;
+  z-index: 2;
+  pointer-events: none;
+}
+.quiz-result-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
 }
