@@ -1,17 +1,106 @@
 ---
-title: "????"
+title: "Dushii's Magic 8 Ball!"
 author: "Dushii"
 posted: "Dimanche le 16 novembre 2025"
 date: 2025-11-16
 lang: "fr"
 ---
 {% block styles %}
-<link rel="stylesheet" href="/css/col25/404.css">
+<link rel="stylesheet" href="/css/col25/dushi.css">
 {% endblock %}
 
+<!--
 <div class="page-wrapper">
     <img src="/assets/images/col25/little-guy.gif" alt="A little yellow guy dancing like crazy" class="image-center">
-    <h1>Woups! Y'a rien ici!</h1>
-    <p>Tu pensais vraiment que j'allais laisser du code à moitié fini dans une page? Bien essayé chacal... Anyways la page s'en vient fais-toi en pas!</p>
+    <h1>Woops! Nothing to see here!</h1>
+    <p>You really thought I'd leave half-finished code on my website? Nice try jackal... Anyways the page is coming soon don't worry!</p>
     <a href="/{{ lang }}/colectivember-2025" class="back-button">{% if lang == "fr" %}← Retour à l'accueil{% else %}← Back to the Hub{% endif %}</a>
 </div>
+-->
+
+<div class="tile-bg"></div>
+<div class="tile-bg-section">
+        <div class="title-bg">
+            <div class="title-container">
+                <img src="/assets/images/col25/dushi/title.png" alt="Dushii's Magic 8 Ball Title" class="title-image">
+            </div>
+        </div>
+        <div class="hazard-line hazard-top"></div>
+        <div class="magic-8-wrapper">
+            <div class="magic-ball" aria-hidden="true" id="magic-ball">
+                <div id="magic-result" aria-live="polite" class="magic-result"><span class="magic-text">Appuies sur la boule pour secouer</span></div>
+            </div>
+        </div>
+    <a href="/{{ lang }}/colectivember-2025" class="back-link">retour à l'accueil</a>
+    <a href="https://x.com/Dushiido" class="glow-link">refuser de secouer</a>
+</div>
+
+<div class="footer-text">Inspiré par Hypnospace Outlaw</div>
+</div>
+
+<script>
+// Magic 8 Ball / Random sentence generator
+(function() {
+    const responses = [
+        "Ennuyant. Demande encore",
+        "Pose la question opposée.",
+        "Shake faible. Encore.",
+        "scuse le shake était trop bon j'ai moan",
+        "Je pense pas que tu demandes avec le coeur.",
+        "Dis à quelqu'un d'autre de le demander à ta place.",
+        "Quoi?",
+        "c'est comme quand tu le gleeb",
+        "Ça pourrait aller d'un bord comme de l'autre.",
+        "Attends-en un dans deux jours ouvrables.",
+        "Je regarde ça.",
+        "Mm... Mhm! C'est quelque chose.",
+        "la réponse a l'air ps ml obv tbh",
+        "as-tu oublié de demander à quelqu'un?",
+
+        "Suuuuuuure.",
+        "Oui..?",
+        "Ouais.",
+        "ouais",
+        "Ça a l'air bien d'ici.",
+        "C'est dans les cartes.",
+        "Que des bonnes choses.",
+        "oui mais quote moi pas là-dessus",
+        "Ben, oui, mais...",
+        "Malheureusement, oui.",
+        "On m'a conseillé de dire oui.",
+        "genre 70% sûr de ça",
+        "100% certain.",
+
+        "haha non",
+        "T'aimerais dont ça.",
+        "J'pense qu'on doit y donner un classique 'non'",
+        "Nah.",
+        "nah",
+        "Heureusement, non.",
+        "Non?",
+        "Âme faible. Non.",
+        "je compterais pas là-dessus",
+    ];
+    const out = document.getElementById('magic-result');
+    const ball = document.getElementById('magic-ball');
+    const textEl = out.querySelector('.magic-text');
+
+    function pickRandom(list) {
+        return list[Math.floor(Math.random() * list.length)];
+    }
+
+    function showResult(message) {
+        ball.classList.add('shake');
+        if (textEl) textEl.classList.add('hidden');
+        setTimeout(() => {
+            if (textEl) textEl.textContent = message;
+            if (textEl) textEl.classList.remove('hidden');
+            ball.classList.remove('shake');
+        }, 420);
+    }
+
+    ball.addEventListener('click', () => {
+        showResult(pickRandom(responses));
+    });
+})();
+</script>

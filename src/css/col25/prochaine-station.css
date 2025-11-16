@@ -1,9 +1,103 @@
 @import url('./global.css');
 
-.text-left {
-    text-align: left;
+:root {
+    --color-background: #00563f;
+    --color-text: #3a1010;
+    --color-box: #f0e4d2;
 }
 
-.text-right {
+body {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+}
+.page-wrapper {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 5%;
+    color: var(--color-text);
+}
+
+.text-container {
+    /* layout as a horizontal block: text + optional side image */
+    display: flex;
+    align-items: flex-start;
+    gap: 6rem;
+    width: fit-content;
+    margin: 2rem 0;
+    background: transparent; /* move background to the <p> so image sits outside the beige box */
+    padding: 0;
+}
+.text-container.left {
+    flex-direction: row;
+    text-align: left;
+}
+.text-container.right {
+    margin-left: auto;
     text-align: right;
+    flex-direction: row-reverse;
+}
+
+/* Move decorative/background styling to the paragraph itself so the image sits outside the beige box */
+.text-container p {
+    background-color: var(--color-box);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0;
+    display: block;
+    max-width: 60ch; /* keep line length readable */
+}
+
+/* Side image styling */
+.side-image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+
+/* If you want the image on the outer side for right/left containers, row-reverse above plus DOM order works with the current HTML.
+   For responsive stacking on narrow screens, stack vertically. */
+@media (max-width: 700px) {
+    .text-container.left, .text-container.right {
+        flex-direction: column;
+        width: 100%;
+    }
+    .side-image {
+        width: auto;
+        height: 200px;
+        margin: 0 auto 1rem;
+    }
+    .text-container p {
+        max-width: 100%;
+        align-self: center;
+        text-align: center;
+    }
+    #flower05 {
+        display: none;
+    }
+}
+
+.back-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 3rem 0;
+}
+.back-image {
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.back-image:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(0.8);
 }

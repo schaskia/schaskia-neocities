@@ -3,7 +3,7 @@
   --circle-size: 5rem;       /* overall button size */
   --circle-radius: 45;        /* SVG <circle> r value */
   --ring-color: var(--color-wrapper01);      /* active progress ring */
-  --ring-bg: var(-color-background01);            /* background ring */
+  --ring-bg: var(--color-background01);            /* background ring */
   --ring-width: 6;            /* stroke thickness */
   --ring-start: -90deg;       /* rotate ring start point */
   --icon-size: 32px;          /* size of play/pause icons */
