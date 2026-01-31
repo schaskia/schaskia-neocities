@@ -19,27 +19,34 @@ module.exports = function (eleventyConfig) {
         return shuffledArray;
     });
 
-    eleventyConfig.addCollection("journal_en", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/en/journal-posts/*.html");
+    eleventyConfig.addCollection("journal", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/journal/*.html");
     });
-    eleventyConfig.addCollection("journal_fr", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/fr/journal-posts/*.html");
+    eleventyConfig.addCollection("disquaire", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("src/disquaire/*.html");
     });
 
-    eleventyConfig.addCollection("albums_en", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/en/albums/*.html");
-    });
-    eleventyConfig.addCollection("albums_fr", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/fr/albums/*.html");
+    eleventyConfig.addCollection("photos", function(collectionApi) {
+        const fs = require("fs");
+        const path = "src/assets/images/photos";
+        return fs.readdirSync(path)
+            .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
+            .map(file => ({
+            url: `/assets/images/photos/${file}`
+            }));
+        });
+
+    eleventyConfig.addFilter("montrealDate", dateObj => {
+        return dateObj.toLocaleString("fr-CA", {
+        timeZone: "America/Montreal",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        });
     });
     
-    eleventyConfig.addCollection("col25_fr", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/fr/col25/*.html");
-    });
-    eleventyConfig.addCollection("col25_en", function(collectionApi) {
-        return collectionApi.getFilteredByGlob("src/en/col25/*.html");
-    });
-
     return {
         dir: {
             input: 'src',

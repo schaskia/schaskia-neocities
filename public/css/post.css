@@ -1,0 +1,100 @@
+#post-text > h2, #post-text > h3, #post-text > h4, #post-text > p, #post-text > li, #post-text > blockquote {
+    text-align: left;
+}
+#post-text > h2 {
+    margin-top: 1.5rem;
+}
+#post-text > h4 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent02);
+}
+#post-text > p {
+    margin-top: 1rem;
+}
+#post-text > blockquote {
+    border-left: 4px solid var(--color-accent01);
+    margin-top: 1rem;
+    padding-left: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+#post-text > hr {
+    border: none;
+    border-top: 2px solid var(--color-accent02);
+    margin: 2rem 0;
+}
+
+#post-text {
+    padding: 3rem;
+}
+
+a {
+    color: var(--color-text);
+}
+.back-button {
+    display: inline-block;
+    background-color: var(--color-box);
+    padding: 0.5rem 1rem;
+    margin: 1.5rem;
+    border-radius: 8px;
+    border: solid 2px var(--color-border);
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.back-button:hover {
+    background-color: var(--color-box-hover);
+    transform: scale(1.1);
+}
+
+.footer-logo {
+    width: 40px;
+    height: auto;
+    margin: 2rem auto 0;
+    display: block;
+    box-shadow: none;
+}
+.journal-img {
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.journal-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: solid 2px var(--color-border);
+    margin-bottom: 1rem;
+}
+.journal-img.right {
+    float: right;
+}
+.journal-img.left {
+    float: left;
+}
+.album-cover {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    float: right;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    border: solid 2px var(--color-border);
+}
+.album-info > * {
+    text-align: left;
+}
+
+.love-it {
+    color: var(--color-loveit);
+}
+.like-it {
+    color: var(--color-likeit);
+}
+.dislike-it {
+    color: var(--color-dislikeit);
+}
+.hate-it {
+    color: var(--color-hateit);
+}

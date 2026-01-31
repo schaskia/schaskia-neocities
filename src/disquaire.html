@@ -1,0 +1,28 @@
+---
+layout: /layout/base.html
+title: ici j'écoute
+---
+{% block styles %}
+<link rel="stylesheet" href="/css/disquaire.css">
+{% endblock %}
+<div class="bg-parallax">
+    <div class="page-container">
+        {% include "header-links.html" %}
+        <div class="box-container">
+            <div class="grid-container">
+                {% for post in collections.disquaire | reverse %}
+                    <div class="post-container">
+                        <a href="{{ post.url }}">
+                            <img src="{{ post.data.cover }}" class="album-cover">
+                            <div class="album-info">
+                                <h2 class="album-title">{{ post.data.title }}</h2>
+                                <p class="album-artist">{{ post.data.artist }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% include "theme-selector.html" %}
+    </div>
+</div>

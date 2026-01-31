@@ -1,12 +1,15 @@
-<div class="header-links">
-    <ul>
-        <li><a href="/{{ lang }}/" class="header-button">{% if lang == "fr" %}Accueil{% else %}Home{% endif %}</a></li>
-        <li><a href="/{{ lang }}/journal" class="header-button">{% if lang == "fr" %}Journal{% else %}Journal{% endif %}</a></li>
-        <li><a href="/{{ lang }}/album-gallery" class="header-button">{% if lang == "fr" %}Disquaire{% else %}CD Shop{% endif %}</a></li>
-        <li><a href="/{{ lang }}/photo-gallery" class="header-button">{% if lang == "fr" %}Photos{% else %}Photos{% endif %}</a></li>
-        <li><a href="/{{ lang }}/contact" class="header-button">{% if lang == "fr" %}Mes liens{% else %}My links{% endif %}</a></li>
-        <li><a href="/{{ lang }}/comments" class="header-button">{% if lang == "fr" %}Commentaires{% else %}Comments{% endif %}</a></li>
-        <li><a href="/{{ lang }}/colectivember-2025" class="header-button">{% if lang =="fr" %}Colectivembre{% else %}Colectivember{% endif %}</a></li>
-        <li><a href={{langAltUrl}} class="header-button">{% if lang == "fr" %}EN{% else %}FR{% endif %}</a></li>
-    </ul>
-</div>
+<div class="row-container">
+            <div class="box-container" id="navbar">
+                <h2>On s'en va où?</h2>
+                {% if page.url == '/' %}
+                <h4>Pssst! Si tu veux garder la musique, maintiens Ctrl en cliquant sur les liens pour ouvrir une nouvelle fenêtre.</h4>
+                {% endif %}
+                <ul class="link-list">
+                    <li class="link-item"><a href="/" >Accueil</a></li>
+                    <li class="link-item"><a href="/journal/">Journal</a></li>
+                    <li class="link-item"><a href="/disquaire/">Disquaire</a></li>
+                    <li class="link-item"><a href="/photos/">Album photo</a></li>
+                    <li class="link-item"><a href="/commentaires/">Commentaires</a></li>
+                </ul>
+            </div>
+        </div>

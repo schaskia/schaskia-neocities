@@ -1,0 +1,24 @@
+---
+layout: /layout/base.html
+title: ici j'écris
+---
+{% block styles %}
+<link rel="stylesheet" href="/css/journal.css">
+{% endblock %}
+<div class="bg-parallax">
+    <div class="page-container">
+        {% include "header-links.html" %}
+        <div class="grid-container">
+            {% for post in collections.journal | reverse %}
+            <a href="{{ post.url }}" class="post-container">
+                <div class="box-container">
+                        <h3>{{ post.data.title }}</h3>
+                    <span class="post-date">{{ post.data.posted }}</span>
+                    <h6>{{ post.data.tagline }}</h6>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% include "theme-selector.html" %}
+    </div>
+</div>

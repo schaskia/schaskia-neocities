@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo-noir.svg">
+    <link rel="stylesheet" href="/css/post.css">
+    {% block styles %}{% endblock %}
+    <link id="theme-css" rel="stylesheet" href="/css/themes/neutral.css">
+    <script src="/js/theme-selector.js"></script>
+    <script src="/js/audio-player.js"></script>
+    {% block scripts %}{% endblock %}
+  </head>
+  <body>
+    <div class="bg-parallax">
+        <div class="page-container">
+            {% include "header-links.html" %}
+            <div class="box-container" id="post-text">
+                <h1>{{title}}</h1>
+                {{content | safe}}
+                <a href="/journal/" class="back-button">Retour au journal</a>
+                <h6>© {{date.toLocaleString( undefined, { year: 'numeric'})}} Saskia Schnéegans – {{footer}}</h6>
+                <img src="/assets/images/logo-noir.svg" alt="Logo Saskia Schnéegans" class="footer-logo">
+            </div>
+            {% include "theme-selector.html" %}
+        </div>
+    </div>
+  </body>
+</html>

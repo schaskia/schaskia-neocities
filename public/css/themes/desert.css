@@ -1,0 +1,33 @@
+@import url('../global.css');
+
+:root {
+    --color-background: #171310;
+    --color-text: #e4cfbe;
+    --color-text-muted: #bfae9e;
+    --color-box: #12100fc7;
+    --color-box-hover: #12100f;
+    --color-border: none;
+    --color-accent01: #cca047;
+    --color-accent02: #b86440;
+
+    --color-loveit: #495a93;
+    --color-likeit: #38704c;
+    --color-dislikeit: #cca047;
+    --color-hateit: #9c3d40;
+
+    --bg-image: url('/assets/images/backgrounds/desert.jpg');
+
+    --font-title: 'Covered By Your Grace', cursive;
+    --font-subtitle: 'Annie Use Your Telescope', cursive;
+    --font-body: 'Patrick Hand', Tahoma, Geneva, Verdana, sans-serif;
+
+    --box-shadow: none;
+}
+
+.box-container {
+    border-radius: 12px;;
+    backdrop-filter: blur(5px);
+    border: none;
+}
+
+
