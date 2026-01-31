@@ -1,0 +1,75 @@
+a, img {
+    display: inline;
+    margin: 0;
+}
+
+#hcb_settings {
+    display: none;
+}
+
+#hcb_form_name {
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+#HCB_comment_box #hcb_form textarea, #HCB_comment_box #hcb_form #hcb_form_name {
+    border-radius: 1rem;
+    border: none;
+    padding: 1rem;
+    background-color: var(--color-box-hover);
+
+}
+
+#HCB_comment_box {
+    font-family: var(--font-body);
+    margin: 0 1.5rem;
+}
+
+.hcb-door-in, .home-desc, h3 {
+    display: none;
+}
+
+#HCB_comment_box #hcb_form .btn, #HCB_comment_box #HCB_comment_form_box .btn {
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--color-accent01);
+    font-family: var(--font-subtitle);
+    color: var(--color-box);
+}
+
+.date {
+    font-family: var(--font-subtitle);
+}
+
+.comment {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color-box);
+  border: solid 2px var(--color-border);
+  box-shadow: var(--box-shadow);
+}
+
+.likes {
+  margin: 1rem;
+}
+
+#HCB_comment_box .hcb-comment-tb button {
+  color: var(--color-accent01);
+}
+
+#hcb_msg {
+  color: var(--color-box);
+  margin: 1.5rem 0.5rem;
+}
+@media (max-width: 768px) {
+  .page-wrapper {
+      width: 90%;
+      margin: 1rem auto;
+      padding: 0.5rem;
+  }
+  
+}
+#HCB_comment_box #comments_list {
+  flex: none;
+}

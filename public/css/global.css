@@ -1,147 +1,218 @@
-@import url('./reset.css');
-@import url('./audio-player.css');
-@import url('./header-links.css');
+@import url('../css/reset.css');
 
-/* Loading color variables and fonts */
+@font-face {
+    font-family: "Covered By Your Grace";
+    src: url(/assets/fonts/CoveredByYourGrace-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Annie Use Your Telescope";
+    src: url(/assets/fonts/AnnieUseYourTelescope-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Patrick Hand";
+    src: url(/assets/fonts/PatrickHand-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Prompt";
+    src: url(/assets/fonts/Prompt-SemiBold.ttf) format('truetype');
+}
+@font-face {
+    font-family: "Overpass";
+    src: url(/assets/fonts/Overpass-VariableFont_wght.ttf) format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Hind Madurai";
+    src: url(/assets/fonts/HindMadurai-Regular.ttf) format('truetype');
+}
 
 :root {
-    --color-box: #f4f0e5;
-    --color-box-hover: #e0dcd2;
-    --color-text: #201107;
-    --color-text-muted: #504945;
-    --color-background01: #22162d;
-    --color-wrapper01: #422c55;
-    --color-background02: #12304c;
-    --color-wrapper02: #1a4c7a;
-    --color-background03: #631321;
-    --color-wrapper03: #821126;
-    --color-background04: #0a322f;
-    --color-wrapper04: #0A544F;
-    --color-background05: #bb7218;
-    --color-wrapper05: #D4821E;
-    --color-background06: #4d1232;
-    --color-wrapper06: #ad2f45;
-    --color-accent01: #0A544F;
-    --color-accent02: #1a4c7a;
-    --color-accent03: #B60E2D;
-    --color-accent04: #D4821E;
-    --color-accent05: #e64539;
-    --color-accent01-muted: #0a3e3a;
-    --color-accent02-muted: #153756;
-    --color-accent03-muted: #8d1228;
-    --color-accent04-muted: #bb7218;
+    --color-background: #1c0e27;
+    --color-text: #f5f5f5;
+    --color-text-muted: #b0b0b0;
+    --color-box: #00000079;
+    --color-border: #444444;
+    --color-accent: #007acc;
+    
+    --color-loveit: #1417e8;
+    --color-likeit: #09672f;
+    --color-dislikeit: #dd9f00;
+    --color-hateit: #d40b29;
+
+    --bg-image: url('/assets/images/backgrounds/neutral.jpg');
+
+    --font-title: 'Covered By Your Grace', cursive;
+    --font-subtitle: 'Annie Use Your Telescope', cursive;
+    --font-body: 'Patrick Hand', Tahoma, Geneva, Verdana, sans-serif
+
+    --box-shadow: none;
 }
-
-@font-face {
-  font-family: 'Panas Chill';
-  src: url('/assets/fonts/PanasChill.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Grape Soda';
-  src: url('/assets/fonts/GrapeSoda.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Smalle';
-  src: url('/assets/fonts/smalle.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-/* Headings and body text */
 
 body {
-    font-family: "Panas Chill", sans-serif;
-    font-size: 0.9rem;
-    color: var(--color-text);
-}
-
-h1 {
-    font-family: "Grape Soda", sans-serif;
-    font-size: 2.1rem;
-    color: var(--color-text);
-    margin: 2.2rem 0;
-}
-
-h2 {
-    font-family: "Grape Soda", sans-serif;
-    font-size: 1.8rem;
-    color: var(--color-text);
-    margin: 0.8rem 0;
-}
-
-h3 {
-    font-family: "Panas Chill", sans-serif;
-    font-size: 1.3rem;
-    color: var(--color-text);
-    margin: 0.8rem 0;
-}
-
-h4 {
-    font-family: "Panas Chill", sans-serif;
-    font-size: 1rem;
-    color: var(--color-text);
-    margin: 0.5rem 0;
-}
-
-h5 {
-    font-family: "Panas Chill", sans-serif;
-    font-size: 1rem;
-    color: var(--color-text-muted);
+    background-color: var(--color-background);
+    font-family: var(--font-body);
     margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    cursor: url("/assets/images/wii-regular.cur"), auto;
 }
-
+h1, h2 {
+    font-family: var(--font-title);
+    margin: 0.5rem;
+    color: var(--color-accent01);
+}
+h3, h4, h5, h6 {
+    font-family: var(--font-subtitle);
+    margin: 0.5rem;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
 h6 {
-    font-family: "Smalle", sans-serif;
-    font-size: 0.85rem;
+    font-size: 1.2rem;
     color: var(--color-text-muted);
-    margin: 0.5rem 0;
+}
+p {
+    line-height: 1.6;
+    margin: 0.5rem;
+}
+a {
+    text-decoration-color: var(--color-accent02);
+}
+a, button * {
+    cursor: url("/assets/images/wii-link.cur"), pointer;
+}
+li {
+    text-align: left;
 }
 
-a {
+
+select {
+    background-color: var(--color-box);
+    color: var(--color-text);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+select:focus {
+    outline: none;
+}
+
+.bg-parallax {
+    background-image: var(--bg-image);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    width: 80vw;
+    margin: 0 auto;
+}
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    max-height: 40vh;
+}
+.grid-container {
+  display: grid;
+  gap: 2rem 1.5rem;
+  margin: 2rem 0;
+}
+.box-container {
+    flex: 1;
+    background-color: var(--color-box);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.music-icon > g > path {
+    stroke: var(--color-text);
+}
+
+/* Navbar link styles */
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.link-item {
+    margin: 0.5rem 1rem;
+    background-color: var(--color-box);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.link-item a {
+    color: var(--color-text);
+}
+
+.link-item:hover {
+    background-color: var(--color-box-hover);
+    transform: scale(1.05);
+}
+
+#theme-selector-box {
+    max-width: 30vw;
+}
+
+/* Mini audio player button styling to match main music player */
+.mini-audio-player {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1rem 0;
+}
+.mini-audio-player .mini-play-pause {
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    outline: none;
+    transition: transform 0.2s;
+}
+.mini-audio-player .mini-play-pause:hover {
+    transform: scale(1.08);
+}
+.mini-audio-player .mini-play-icon,
+.mini-audio-player .mini-pause-icon {
+    width: 4rem;
+    height: 4rem;
     display: block;
 }
-
-.box-wrapper {
-    background-color: var(--color-box);
-    padding: 1rem;
-    overflow-y: auto;
-    max-height: 100%;
+.mini-audio-player .mini-play-icon g > path,
+.mini-audio-player .mini-pause-icon g > path {
+    stroke: var(--color-text);
+    fill: none;
 }
-
-@media (max-width: 768px) {
-  body {
-    font-size: 0.8rem;
-  }
-  h1 {
-    font-size: 2rem;
-    margin: 1.2rem 0;
-  }
-  h2 {
-    font-size: 1.6rem;
-    margin: 0.8rem 0;
-  }
-  h3 {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-  }
-  h4 {
-    font-size: 0.9rem;
-    margin: 0.3rem 0;
-  }
-  h5 {
-    font-size: 0.85rem;
-  }
-  h6 {
-    font-size: 0.75rem;
-    margin: 0.3rem 0;
-  }
+.mini-audio-player audio {
+    display: none;
 }
-
-

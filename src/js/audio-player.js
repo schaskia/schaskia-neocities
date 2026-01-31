@@ -1,113 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".audio-player").forEach(player => {
-    const btn = player.querySelector(".circle-btn");
-    const audio = player.querySelector("audio");
-    audio.volume = 0.5;
-    const progressRing = player.querySelector(".circle-progress");
 
-    // read radius from CSS variable
-    const radius = getComputedStyle(document.documentElement)
-      .getPropertyValue("--circle-radius").trim();
-    const circumference = 2 * Math.PI * radius;
+// Minimal audio player for posts
+// Usage example:
+// <div class="mini-audio-player" data-src="/assets/audio/example.mp3" data-start="10" data-end="20">
+//   <button class="mini-play-pause" aria-label="Play/Pause">
+//     <svg class="mini-play-icon" ...>...</svg>
+//     <svg class="mini-pause-icon" style="display:none" ...>...</svg>
+//   </button>
+//   <audio preload="auto"></audio>
+// </div>
 
-    progressRing.style.strokeDasharray = circumference;
-    progressRing.style.strokeDashoffset = circumference;
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelectorAll('.mini-audio-player').forEach(function(player) {
+		const audio = player.querySelector('audio');
+		const btn = player.querySelector('.mini-play-pause');
+		const playIcon = player.querySelector('.mini-play-icon');
+		const pauseIcon = player.querySelector('.mini-pause-icon');
+		const src = player.dataset.src;
+		const start = parseFloat(player.dataset.start) || 0;
+		const end = (player.dataset.end !== undefined && player.dataset.end !== "" && player.dataset.end !== null) ? parseFloat(player.dataset.end) : null;
+		const fadeDuration = parseFloat(player.dataset.fade) || 1.2; // seconds
 
-    function setProgress(percent) {
-      const offset = circumference - (percent / 100) * circumference;
-      progressRing.style.strokeDashoffset = offset;
-    }
+		if (src) audio.src = src;
 
-    const start = parseFloat(audio.getAttribute('data-start')) || 0;
-    const end = parseFloat(audio.getAttribute('data-end')) || audio.duration;
-  let fadeClipDuration = 1.5; // seconds for fade in/out at start/end of clip
-  let fadePauseDuration = 0.3; // seconds for fade in/out on pause/resume
+		// Web Audio API setup for fade
+		let ctx, source, gainNode, fadeTimeout;
+		function setupAudioContext() {
+			if (!ctx) {
+				ctx = new (window.AudioContext || window.webkitAudioContext)();
+				source = ctx.createMediaElementSource(audio);
+				gainNode = ctx.createGain();
+				gainNode.gain.value = 1;
+				source.connect(gainNode).connect(ctx.destination);
+			}
+		}
 
-    function fadeAudio(targetVolume, duration, callback) {
-      const initialVolume = audio.volume;
-      const step = (targetVolume - initialVolume) / (duration * 60);
-      let frame = 0;
-      function fade() {
-        frame++;
-        audio.volume = Math.max(0, Math.min(1, initialVolume + step * frame));
-        if ((step > 0 && audio.volume < targetVolume) || (step < 0 && audio.volume > targetVolume)) {
-          requestAnimationFrame(fade);
-        } else {
-          audio.volume = targetVolume;
-          if (callback) callback();
-        }
-      }
-      fade();
-    }
+		// Seek to start on load
+		audio.currentTime = start;
+		audio.addEventListener('loadedmetadata', function() {
+			audio.currentTime = start;
+		});
 
-    let fadingOut = false;
-    let fadingIn = false;
-    btn.addEventListener("click", () => {
-      if (audio.paused) {
-        // Only reset to start if at beginning or after end
-        if (audio.currentTime <= start || audio.currentTime >= end) {
-          audio.currentTime = start;
-          audio.volume = 0;
-          fadingIn = true;
-          audio.play();
-        } else {
-          // Resume from paused position, fade in quickly
-          fadeAudio(0.5, fadePauseDuration, () => audio.play());
-        }
-        btn.classList.add("playing");
-        btn.setAttribute("aria-label", "Pause");
-      } else {
-        fadeAudio(0, fadePauseDuration, () => audio.pause());
-        btn.classList.remove("playing");
-        btn.setAttribute("aria-label", "Play");
-      }
-    });
+		// Play/pause logic
+		btn.addEventListener('click', function() {
+			setupAudioContext();
+			if (audio.paused) {
+				audio.currentTime = Math.max(audio.currentTime, start);
+				fadeIn();
+				audio.play();
+			} else {
+				fadeOut();
+			}
+		});
 
-    // Fade in at start, fade out at end
-    audio.addEventListener("timeupdate", () => {
-      // Fade in only once at start of clip
-      if (fadingIn && audio.currentTime <= start + fadeClipDuration) {
-        fadeAudio(0.5, fadeClipDuration, () => { fadingIn = false; });
-      }
-      // Fade out only once at end of clip
-      if (!fadingOut && end && audio.currentTime >= end - fadeClipDuration) {
-        fadingOut = true;
-        fadeAudio(0, fadeClipDuration, () => {
-          audio.pause();
-          btn.classList.remove("playing");
-          btn.setAttribute("aria-label", "Play");
-          setProgress(0);
-          audio.currentTime = start;
-          audio.volume = 0.5;
-          fadingOut = false;
-        });
-      }
-      // Prevent playing past end
-      if (end && audio.currentTime >= end) {
-        audio.pause();
-        btn.classList.remove("playing");
-        btn.setAttribute("aria-label", "Play");
-        setProgress(0);
-        audio.currentTime = start;
-        audio.volume = 0.5;
-        fadingOut = false;
-      }
-      const percent = ((audio.currentTime - start) / (end - start)) * 100;
-      setProgress(percent);
-    });
+		function fadeIn() {
+			if (!gainNode) return;
+			gainNode.gain.cancelScheduledValues(ctx.currentTime);
+			gainNode.gain.setValueAtTime(0, ctx.currentTime);
+			gainNode.gain.linearRampToValueAtTime(1, ctx.currentTime + fadeDuration);
+		}
+		function fadeOut() {
+			if (!gainNode) return;
+			gainNode.gain.cancelScheduledValues(ctx.currentTime);
+			gainNode.gain.setValueAtTime(gainNode.gain.value, ctx.currentTime);
+			gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + fadeDuration);
+			setTimeout(() => { audio.pause(); }, fadeDuration * 1000);
+		}
 
-    audio.addEventListener("loadedmetadata", () => {
-      if (end === 0 || end > audio.duration) {
-        audio.setAttribute('data-end', audio.duration);
-      }
-    });
+		audio.addEventListener('play', function() {
+			playIcon.style.display = 'none';
+			pauseIcon.style.display = 'inline';
+		});
+		audio.addEventListener('pause', function() {
+			playIcon.style.display = 'inline';
+			pauseIcon.style.display = 'none';
+		});
 
-    audio.addEventListener("ended", () => {
-      btn.classList.remove("playing");
-      btn.setAttribute("aria-label", "Play");
-      setProgress(0);
-      audio.currentTime = start;
-      audio.volume = 0.5;
-    });
-  });
+		// Stop at end time with fade out
+		if (end !== null && !isNaN(end) && end > 0) {
+			audio.addEventListener('timeupdate', function() {
+				if (audio.currentTime >= end - fadeDuration && !audio.paused) {
+					fadeOut();
+				}
+				if (audio.currentTime >= end) {
+					audio.pause();
+					audio.currentTime = start;
+				}
+			});
+		}
+
+		// Reset to start if ended
+		audio.addEventListener('ended', function() {
+			audio.currentTime = start;
+			playIcon.style.display = 'inline';
+			pauseIcon.style.display = 'none';
+		});
+	});
 });

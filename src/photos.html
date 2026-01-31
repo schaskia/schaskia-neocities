@@ -1,0 +1,16 @@
+---
+layout: layout/base.html
+---
+{% block styles %}
+<link rel="stylesheet" href="/css/photos.css">
+{% endblock %}
+{% include "header-links.html" %}
+<div class="grid-container">
+  {% set photos = collections.photos %}
+  {% for photo in photos | shuffle %}
+    <div class="photo-item">
+      <img src="{{ photo.url }}" alt="Photo">
+    </div>
+  {% endfor %}
+</div>
+{% include "theme-selector.html" %}

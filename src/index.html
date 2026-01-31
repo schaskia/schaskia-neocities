@@ -1,12 +1,166 @@
 ---
-layout: layout/base.html
-title: Euh génération web???
+layout: /layout/base.html
+title: schaskia
+tagline: "i don't like javascript :("
+
+date: Last Modified
+status: "Je déménage dans deux jours :D"
+statusimg: /assets/images/status/happy.jpg
+
+song-title: "Placeholder Song"
+song-artist: "Placeholder Artist"
+song-album: "Placeholder Album"
 ---
 {% block styles %}
-    <link rel="stylesheet" href="/css/language.css">
+<link rel="stylesheet" href="/css/home.css">
 {% endblock %}
-<div class="page-wrapper">
-    <h2 id="title" class="page-box">Choisis ta langue / Choose your language</h1>
-        <a href="/fr/" class="lang-button"><h2>Français</h2></a>
-        <a href="/en/" class="lang-button"><h2>English</h2></a>
+{% block scripts %}
+<script src="/js/tagline.js"></script>
+<script src="/js/header-icons.js"></script>
+<script src="/js/music-player.js"></script>
+{% endblock %}
+<div class="bg-parallax">
+    <div class="page-container">
+        <div class="row-container">
+            <div class="box-container" id="header">
+                <div class="title-container">
+                    <img class="random-icon" alt="Random Icon">
+                    <h1 class="title">{{title}}</h1>
+                    <img class="random-icon" alt="Random Icon">
+                </div>
+                <h3 class="tagline">{{tagline}}</h3>
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="box-container" id="about-me">
+                <!-- image of me -->
+                <div class="text-container">
+                    <h2>Présentation de l'enfoirée dans la photo</h2>
+                    <div class="about-me-text">
+                        <img src="/assets/images/accueil-image.png" alt="Photo de moi" class="about-me-photo">
+                        <h4>Saskia Schnéegans (elle)</h4>
+                        <p>Eyup! Bienvenue sur mon site web. Si t'es ici, y'a genre 90% de chance que tu me connaisses déjà, mais au cas où c'est la première fois que tu me vois la binette, moi c'est Saskia, j'ai 20 ans, je suis une artiste en effets spéciaux qui réside à Montréal et je sais pas comment terminer cette phrase. Je suis une vraie touche-à-tout, mais pas de la manière qui me donnerait un casier judiciaire; j'adore apprendre des nouvelles choses, que ce soit comment manier des nunchakus, lire et écrire en code morse ou bien coder un site web.<br>
+                        D'ailleurs, parlant de site web, à quoi est-ce que tu devrais t'attendre en te promenant ici? Honnêtement tout et n'importe quoi! Je suis très égarée dans ce qui m'intéresse dans la vie, faque ce que je poste ici reflète ça quand même assez bien. Y'a des posts qui parlent de ma vie quotidienne pis toutes les hyperfixations que j'ai eu dans les dix dernières années, des reviews d'albums que j'écoute comme une audiophile prétentieuse depuis que j'ai acheté un iPod et des photos de moi et les gens qui me sont proches dispersées à travers des posters de qualité discutables faits sur un moniteur qui avait de la misère à afficher la couleur mauve. Si jamais tu veux laisser ta marque sur ce coin de la toile, drop un commentaire avec un pseudonyme un peu quirky comme ça je passe quelques heures à guesser de qui il s'agit.</p>
+                        <hr>
+                        <h3>Fiche d'infos</h3>
+                        <h6>Tsé comme les bios de personnages de roleplay qu'on remplissait tous sur Amino en 2017? Non c'est juste moi ça? Ok...</h6>
+                        <ul>
+                            <li>Nom complet : Saskia Océane Schnéegans</li>
+                            <li>Date de fête : 13 décembre 2005</li>
+                            <li>Occupation : Artiste en compositing</li>
+                            <li>Langues parlées : Français et anglais</li>
+                            <li>Live je fais quoi : Idk je suis sûrement en train de me gratter une fesse</li>
+                            <li>Couleur préférée (du moment) : Un beau turquoise un peu sale (comme mes cheveux)</li>
+                            <li>Mes passe-temps : Trouver des albums à mettre sur mon iPod, commencer des projets pis jamais les finir, dire des affaires étranges pour me faire mettre dans le plus de quote books possibles, m'imaginer être un cheval qui galope dans une plaine pendant un coucher de soleil, parler à tout le monde d'à quel point j'aime ma blonde</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="box-container" id="status">
+                <div class="text-container">
+                    <h2>Statut</h2>
+                    <h6>{{page.date | montrealDate}}</h6>
+                    <p>{{status}}</p>
+                    <img src="{{statusimg}}" alt="Status Image" class="status-image">
+                </div>
+            </div>
+        </div>
+        {% include "header-links.html" %}
+        <div class="row-container">
+            <div class="box-container" id="latest-posts">
+                <div class="text-container">
+                    <h2>Derniers articles</h2>
+                    {% for post in collections.journal | reverse | limit(5) %}
+                    <div class="post-preview">
+                        <a href="{{ post.url }}">
+                            <h3>{{ post.data.title }}</h3>
+                        </a>
+                        <span class="post-date">{{ post.data.posted }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="box-container" id="music">
+                <h2>Petite playlist</h2>
+                {% set showInfo = true %}
+                {% include "music-player.html" %}
+            </div>
+        </div>
+        <div class="row-container">
+            <div class="box-container" id="buttons">
+                <h2>Buttons</h2>
+                <div class="buttons-text">
+                    <hr>
+                    <h3>Liens pour me rejoindre</h3>
+                    <div class="buttons-wrapper">
+                        <a target="_blank" href="https://neocities.org/site/schaskia"><img src="/assets/images/buttons/neocities.gif" class="button-image" /></a>
+                        <a target="_blank" href="https://discord.com/users/581645939756892170"><img src="/assets/images/buttons/discord.gif" class="button-image" /></a>
+                        <a target="_blank" href="mailto:saskia.schneg@gmail.com"><img src="/assets/images/buttons/gmail.gif" class="button-image" /></a>
+                        <a target="_blank" href="https://www.last.fm/user/schaskia"><img src="/assets/images/buttons/lastfm-01.gif" class="button-image" /></a>
+                        <a target="_blank" href="https://www.reddit.com/user/DoritoSaskia/"><img src="/assets/images/buttons/reddit.gif" class="button-image" /></a>
+
+                    </div>
+                    <hr>
+                    <h3>Bouton vers mon site web!</h3>
+                    <p>Si tu veux le mettre sur ton site web, dis-le moi que je te rende la pareille!</p>
+                    <div class="buttons-wrapper">
+                        <a href="https://schaskia.neocities.org"><img src="/assets/images/buttons/schaskia_button.gif"  class="button-image" /></a>
+                    </div>
+                    <hr>
+                    <h3>D'autres sites web turbo cools</h3>
+                    <p>Allô mes voisins! Hiiii haii hey hi :3</p>
+                    <div class="buttons-wrapper">
+                        <a target="_blank" href="https://xsolimini.fr"><img src="https://xsolimini.fr/images/xsoliminishq88x31.gif" class="button-image"></a>
+                        <a target="_blank" href="https://julians-art.neocities.org/"><img src="https://julians-art.neocities.org/images/buttons/88x31.gif" class="button-image"></a>
+                        <a target="_blank" href="https://ponpon.nekoweb.org/"><img src="/assets/images/buttons/toutouvertstamp.gif" class="button-image"></a>
+                        <a target="_blank" href="https://matchaprika.club/page-accueil"><img src="/assets/images/buttons/bouton-matchaprika-club.png" class="button-image"></a>
+                    </div>
+                    <hr>
+                    <h3>Ceux-là sont fun mais inutiles</h3>
+                    <div class="buttons-wrapper">
+                        <img src="/assets/images/buttons/animaleriechico_bouton_bou_animalerie_chico.gif" class="button-image" />
+                        <img src="/assets/images/buttons/animaleriechico_bouton_bou_s_maisonneuve.gif" class="button-image" />
+                        <img src="/assets/images/buttons/cssdif.gif" class="button-image" />
+                        <img src="/assets/images/buttons/designedbymac.gif" class="button-image" />
+                        <img src="/assets/images/buttons/fckfb.gif" class="button-image" />
+                        <img src="/assets/images/buttons/fckgoogle.gif" class="button-image" />
+                        <img src="/assets/images/buttons/graphicdesign.gif" class="button-image" />
+                        <img src="/assets/images/buttons/hrt-e2.gif" class="button-image" />
+                        <img src="/assets/images/buttons/internetprivacy.gif" class="button-image" />
+                        <img src="/assets/images/buttons/misspictochat.gif" class="button-image" />
+                        <img src="/assets/images/buttons/publicdomain.gif" class="button-image" />
+                        <img src="/assets/images/buttons/queerpride.gif" class="button-image" />
+                        <img src="/assets/images/buttons/ralseismokingadart.gif" class="button-image" />
+                        <img src="/assets/images/buttons/seedyourtorrents.gif" class="button-image" />
+                        <img src="/assets/images/buttons/smile.gif" class="button-image" />
+                        <img src="/assets/images/buttons/vscode.gif" class="button-image" />
+                    </div>
+                </div>
+            </div>
+            <div class="box-container" id="rock-garden">
+                <h2>Fais bouncer une roche</h2>
+                <h6>Merci à <a target="_blank" href="https://korumeow.dev/">Koi</a> pour le widget!! :)</h6>
+                <div class="rocks-container" id="rock-garden-area">
+
+                </div>
+            </div>
+            <div class="box-container" id="to-do">
+                <h2>To-Do</h2>
+                <ul>
+                    <li>Finir ma bio</li>
+                    <li>Trouver un moyen de notifier mes fans quand j'écris de quoi de nouveau</li>
+                    <li>Peaufiner le thème neutre</li>
+                    <li>Trouver d'autres idées de thèmes</li>
+                    <li>Réimplémenter le Colectivembre (et le finir aussi)</li>
+                    <li>Rendre mon site web accessible pour téléphones</li>
+                    <li>Finir les reviews d'albums en attente</li>
+                    <li>Rajouter plus de photos dans l'album</li>
+                    <li>Aimer son prochain</li>
+                </ul>
+            </div>
+        </div>
+        {% include "theme-selector.html" %}
+    </div>
 </div>
+<script src="/js/stones.js"></script>

@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
     <link rel="icon" type="image/x-icon" href="/assets/images/logo-noir.svg">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/albums.css">
-
+    <link rel="stylesheet" href="/css/post.css">
+    {% block styles %}{% endblock %}
+    <link id="theme-css" rel="stylesheet" href="/css/themes/neutral.css">
+    <script src="/js/theme-selector.js"></script>
+    {% block scripts %}{% endblock %}
   </head>
-  <script src="/js/audio-player.js"></script>
-  <script src="/js/collapsible.js"></script>
   <body>
-    <div class="page-wrapper">
-      <div class="post-wrapper">
-          <img src="{{ cover }}" alt="{{ title }} - {{ artist }}" class="album-cover">
-          <h1 class="post-title">{{ title }}</h1>
-          <h3 class="post-artist">{{ artist }}</h3>
-          <p class="post-date"><em>{{ year }}</em></p>
-          <h6 class="post-genre">{{ genre }}</h6>
-          {{content | safe}} 
-          <a href="/{{ lang }}/album-gallery" class="back-button">{% if lang == "fr" %}← Retour au Disquaire{% else %}← Back to the CD Shop{% endif %}</a>
-          <div class="footer-text">
-            <h6>© 2025 Saskia Schnéegans</h6>
-          </div>
-          <img src="/assets/images/logo-noir.svg" alt="Logo bleu" class="end-logo" />
-      </div>
+    <div class="bg-parallax">
+        <div class="page-container">
+            {% include "header-links.html" %}
+            <div class="box-container" id="post-text">
+                <img src="{{ cover }}" alt="{{ title }} - {{ artist }}" class="album-cover">
+                <div class="album-info">
+                    <h1 class="post-title">{{ title }}</h1>
+                    <h3 class="post-artist">{{ artist }}</h3>
+                    <p class="post-date"><em>{{ year }}</em></p>
+                    <h6 class="post-genre">{{ genre }}</h6>
+                </div>
+                {{content | safe}}
+                <a href="/disquaire/" class="back-button">Retour au disquaire</a>
+                <h6>© {{date.toLocaleString( undefined, { year: 'numeric'})}} Saskia Schnéegans – {{footer}}</h6>
+                <img src="/assets/images/logo-noir.svg" alt="Logo Saskia Schnéegans" class="footer-logo">
+            </div>
+            {% include "theme-selector.html" %}
+        </div>
     </div>
   </body>
 </html>

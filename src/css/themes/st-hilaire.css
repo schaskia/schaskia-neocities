@@ -1,0 +1,31 @@
+@import url('../global.css');
+
+:root {
+    --color-background: #171310;
+    --color-text: #e4cfbe;
+    --color-text-muted: #bfae9e;
+    --color-box: #11100f93;
+    --color-box-hover: #181512;
+    --color-border: none;
+    --color-accent01: #5b9a89;
+    --color-accent02: #265a61;
+
+    --color-loveit: #495a93;
+    --color-likeit: #38704c;
+    --color-dislikeit: #cca047;
+    --color-hateit: #9c3d40;
+
+    --bg-image: url('/assets/images/backgrounds/st-hilaire.jpg');
+
+    --font-title: 'Covered By Your Grace', cursive;
+    --font-subtitle: 'Annie Use Your Telescope', cursive;
+    --font-body: 'Patrick Hand', Tahoma, Geneva, Verdana, sans-serif;
+
+    --box-shadow: none;
+}
+
+.box-container {
+    border-radius: 12px;;
+    backdrop-filter: blur(5px);
+    border: none;
+}
