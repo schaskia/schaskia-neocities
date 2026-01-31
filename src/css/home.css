@@ -84,7 +84,7 @@ button:hover {
     margin: 1rem;
     margin-bottom: 0.5rem;
 }
-.about-me-text p {
+.about-me-text p, .about-me-text h3 {
     text-align: left;
 }
 
